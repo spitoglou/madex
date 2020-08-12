@@ -12,5 +12,6 @@ dependencies:
   - pandas
   - ipython
   - jupyter
+  - openpyxl
 prefix: C:\tools\Anaconda3\envs\new_metric
 
