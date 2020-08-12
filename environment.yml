@@ -1,0 +1,16 @@
+name: new_metric
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - pytest
+  - python=3.7
+  - matplotlib
+  - flake8
+  - scikit-learn
+  - autopep8
+  - pandas
+  - ipython
+  - jupyter
+prefix: C:\tools\Anaconda3\envs\new_metric
+
