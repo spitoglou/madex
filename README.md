@@ -1,5 +1,7 @@
 # new_metric
 
+[![pipeline status](https://gitlab.csl.gr/spitoglou/new_metric/badges/master/pipeline.svg)](https://gitlab.csl.gr/spitoglou/new_metric/-/commits/master)
+[![coverage report](https://gitlab.csl.gr/spitoglou/new_metric/badges/master/coverage.svg)](https://gitlab.csl.gr/spitoglou/new_metric/-/commits/master)
 
 ## Setting up environment
 
