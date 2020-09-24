@@ -13,5 +13,6 @@ dependencies:
   - ipython
   - jupyter
   - openpyxl
+  - coverage
+  - pytest-cov
 prefix: C:\tools\Anaconda3\envs\new_metric
-
