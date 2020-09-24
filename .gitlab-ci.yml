@@ -5,9 +5,7 @@ before_script:
   - python --version
   - pip install -r requirements.txt
   - conda env create -f environment.yml
-  - conda activate signatures 
-  - pip install endesive
-  - pip install PyMuPDF
+  - conda activate new_metric 
 stages:
   # - Static Analysis
   - Test
