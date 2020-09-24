@@ -4,7 +4,7 @@ image: "conda/miniconda3"
 before_script:
   - python --version
   - conda env create -f environment.yml
-  - conda activate new_metric 
+  - source activate new_metric 
 stages:
   # - Static Analysis
   - Test
