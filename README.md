@@ -25,3 +25,18 @@ $exp = 2 - tanh(\frac{y_i-a}{b})\times(\frac{\hat{y}_i-y_i}{c})$
 
 $a: center, b:critical range, c:slope$
 
+
+## Run Tests
+
+Just run ```pytest``` while in the root directory.
+
+### Coverage
+
+To see coverage run ```pytest --cov```  
+
+To create ```cov.xml``` file (in order to report coverage in the IDE) run
+```shell
+pytest --cov-report xml:cov.xml --cov
+```
+
+

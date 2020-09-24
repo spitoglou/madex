@@ -1,5 +1,6 @@
 from unittest import TestCase
-from sp_diab.madex import mean_adjusted_exponent_error
+import inspect
+from sp_diab.madex import mean_adjusted_exponent_error, graph_vs_mse
 
 
 class TestMadex(TestCase):
@@ -12,3 +13,8 @@ class TestMadex(TestCase):
             81.71,
             2
         )
+
+    def test_returns_plot(self):
+        plot = graph_vs_mse(50, 40)
+        # assert type(plot) == 'test'
+        assert inspect.ismodule(plot)
