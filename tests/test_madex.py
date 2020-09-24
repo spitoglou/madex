@@ -1,5 +1,5 @@
 from unittest import TestCase
-from ..sp_diab.madex import mean_adjusted_exponent_error
+from sp_diab.madex import mean_adjusted_exponent_error
 
 
 class TestMadex(TestCase):

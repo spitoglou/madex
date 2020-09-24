@@ -1,5 +1,5 @@
 from unittest import TestCase
-from ..sp_diab.cega import clarke_error_grid
+from sp_diab.cega import clarke_error_grid
 
 
 class TestCega(TestCase):
