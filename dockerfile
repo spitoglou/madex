@@ -19,4 +19,5 @@ ENV PATH /opt/conda/envs/new_metric/bin:$PATH
 COPY . /app/
 RUN chown -R csuser:csuser /app/*
 
+
 # ENTRYPOINT [ "/bin/bash" ]
