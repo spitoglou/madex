@@ -3,7 +3,8 @@ image: "conda/miniconda3"
 
 cache:
   paths:
-    - /opt/conda/pkgs    
+    - /usr/local/pkgs
+    - /root/.conda/pkgs    
 # commands to run in the Docker container before starting each job.
 before_script:
   - python --version
