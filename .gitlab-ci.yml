@@ -1,5 +1,9 @@
 # image: "python:3.7" #commands to run in the Docker container before starting each job.
 image: "conda/miniconda3" 
+
+cache:
+  paths:
+    - /opt/conda/pkgs    
 # commands to run in the Docker container before starting each job.
 before_script:
   - python --version
