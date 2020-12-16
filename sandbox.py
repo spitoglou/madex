@@ -1,5 +1,5 @@
-from sp_diab.madex import mean_adjusted_exponent_error, graph_vs_mse
-from sp_diab.cega import clarke_error_grid
+from splib.diabetes.madex import mean_adjusted_exponent_error, graph_vs_mse
+from splib.diabetes.cega import clarke_error_grid
 import pandas as pd
 from sklearn.metrics import mean_squared_error
 import numpy as np

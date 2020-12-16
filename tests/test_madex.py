@@ -1,6 +1,6 @@
 from unittest import TestCase
 import inspect
-from sp_diab.madex import mean_adjusted_exponent_error, graph_vs_mse
+from splib.diabetes.madex import mean_adjusted_exponent_error, graph_vs_mse
 
 
 class TestMadex(TestCase):
