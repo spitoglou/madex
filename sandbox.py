@@ -23,9 +23,7 @@ if __name__ == "__main__":
     print(df)
     df.to_excel('outcome/scenarios.xlsx')
 
-    results = {}
-    results['Scenario 1'] = {}
-    results['Scenario 2'] = {}
+    results = {'Scenario 1': {}, 'Scenario 2': {}}
     plt, zones = clarke_error_grid(y_true, y_pred1, "Scenario 1")
     results['Scenario 1']['A'] = zones[0]
     results['Scenario 1']['B'] = zones[1]
