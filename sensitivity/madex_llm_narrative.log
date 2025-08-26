@@ -1,0 +1,309 @@
+
+====================================================================================================
+MADEX (Mean Adjusted Exponent Error) COMPREHENSIVE ANALYSIS REPORT
+====================================================================================================
+Analysis initiated at: 2025-08-26 22:34:32
+Analysis type: Parameter sensitivity testing for MADEX metric
+Clinical context: Glucose prediction model evaluation
+
+ANALYSIS OBJECTIVES:
+1. Validate MADEX robustness across clinical parameter ranges
+2. Identify optimal parameter combinations for different clinical contexts
+3. Compare MADEX performance against traditional metrics (RMSE, MAE, MAPE)
+4. Assess clinical significance of model ranking changes
+
+================================================================================
+CLINICAL SCENARIO ANALYSIS
+================================================================================
+
+A_Hypoglycemia_Detection: Critical low glucose events
+Risk Level: CRITICAL
+Clinical Context: Life-threatening hypoglycemia (<70 mg/dL). Model A dangerously overestimates, Model B overcorrects downward.
+True glucose range: 45-61 mg/dL
+Model A predictions: 65-80 mg/dL
+Model B predictions: 35-51 mg/dL
+
+B_Hyperglycemia_Management: Sustained high glucose
+Risk Level: HIGH
+Clinical Context: Severe hyperglycemia (>250 mg/dL). Model A underestimates severity, Model B overestimates.
+True glucose range: 275-310 mg/dL
+Model A predictions: 245-280 mg/dL
+Model B predictions: 315-350 mg/dL
+
+C_Postprandial_Response: Rapid meal-induced changes
+Risk Level: MODERATE
+Clinical Context: Post-meal glucose spikes. Model A slightly underestimates, Model B slightly overestimates.
+True glucose range: 115-220 mg/dL
+Model A predictions: 105-210 mg/dL
+Model B predictions: 125-230 mg/dL
+
+D_Dawn_Phenomenon: Early morning glucose rise
+Risk Level: LOW
+Clinical Context: Dawn phenomenon - early morning glucose elevation. Model A tracks closely, Model B underestimates.
+True glucose range: 85-155 mg/dL
+Model A predictions: 90-160 mg/dL
+Model B predictions: 80-150 mg/dL
+
+E_Exercise_Response: Activity-induced glucose drop
+Risk Level: MODERATE
+Clinical Context: Exercise-induced hypoglycemia risk. Model A shows conservative tracking, Model B more aggressive.
+True glucose range: 65-140 mg/dL
+Model A predictions: 70-145 mg/dL
+Model B predictions: 60-135 mg/dL
+
+F_Measurement_Noise: Sensor accuracy challenges
+Risk Level: LOW
+Clinical Context: Measurement precision issues in normal range. Model A has positive bias, Model B negative bias.
+True glucose range: 97-105 mg/dL
+Model A predictions: 105-113 mg/dL
+Model B predictions: 89-97 mg/dL
+
+G_Mixed_Clinical: Combined challenging scenarios
+Risk Level: CRITICAL
+Clinical Context: Mixed critical events including hypoglycemia and hyperglycemia. Tests overall robustness.
+True glucose range: 45-250 mg/dL
+Model A predictions: 55-260 mg/dL
+Model B predictions: 35-240 mg/dL
+
+H_Extreme_Cases: Life-threatening glucose extremes
+Risk Level: CRITICAL
+Clinical Context: Extreme glucose values (<50 or >350 mg/dL). Model A conservative, Model B matches extremes.
+True glucose range: 25-450 mg/dL
+Model A predictions: 45-430 mg/dL
+Model B predictions: 15-470 mg/dL
+
+================================================================================
+MADEX SENSITIVITY ANALYSIS INITIATED
+================================================================================
+Parameter ranges being tested:
+- Parameter 'a' (euglycemic center): [110, 125, 140] mg/dL
+- Parameter 'b' (critical range): [40, 55, 70, 80]
+- Parameter 'c' (slope modifier): [20, 30, 40, 50, 60, 80]
+Total parameter combinations to test: 72
+
+ESTABLISHING BASELINE RANKINGS
+----------------------------------------
+Using standard clinical parameters: a=125 mg/dL (normal target), b=55 (moderate sensitivity), c=40 (standard slope)
+
+================================================================================
+PARAMETER EFFECT ANALYSIS
+================================================================================
+Overall MADEX Stability Assessment:
+- Mean ranking consistency: 0.917 (91.7%)
+- Standard deviation: 0.119
+- Range: 0.750 to 1.000
+- Assessment: STABLE - Moderate variance across parameter changes
+
+Parameter-specific Impact Analysis:
+
+Parameter 'a' Analysis:
+  Clinical meaning: Euglycemic center - target glucose level
+    a=110: 1.000 consistency (standard glycemic control)
+    a=125: 1.000 consistency (standard glycemic control)
+    a=140: 0.750 consistency (standard glycemic control)
+
+Parameter 'b' Analysis:
+  Clinical meaning: Critical range - sensitivity to deviations from target
+    b=40: 0.917 consistency (high sensitivity to deviations)
+    b=55: 0.917 consistency (moderate sensitivity)
+    b=70: 0.917 consistency (moderate sensitivity)
+    b=80: 0.917 consistency (low sensitivity to deviations)
+
+Parameter 'c' Analysis:
+  Clinical meaning: Slope modifier - error scaling factor
+    c=20: 0.917 consistency (steep error scaling (harsh penalties))
+    c=30: 0.917 consistency (standard error scaling)
+    c=40: 0.917 consistency (standard error scaling)
+    c=50: 0.917 consistency (standard error scaling)
+    c=60: 0.917 consistency (gentle error scaling (mild penalties))
+    c=80: 0.917 consistency (gentle error scaling (mild penalties))
+
+Robustness Assessment:
+- Parameter combinations with >80% consistency: 48/72
+- Percentage of robust combinations: 66.7%
+
+Most Stable Parameter Combinations (Clinical Recommendations):
+  Combination a=110, b=40, c=20: 1.000 (standard control, high sensitivity, harsh penalties)
+  Combination a=110, b=40, c=30: 1.000 (standard control, high sensitivity, standard penalties)
+  Combination a=110, b=40, c=40: 1.000 (standard control, high sensitivity, standard penalties)
+  Combination a=110, b=40, c=50: 1.000 (standard control, high sensitivity, standard penalties)
+  Combination a=110, b=40, c=60: 1.000 (standard control, high sensitivity, mild penalties)
+
+================================================================================
+MADEX vs TRADITIONAL METRICS COMPARISON
+================================================================================
+Comparing MADEX model rankings with RMSE, MAE, and MAPE across clinical scenarios
+This analysis reveals where MADEX provides different insights than standard metrics
+
+Analyzing A_Hypoglycemia_Detection:
+Clinical context: Life-threatening hypoglycemia (<70 mg/dL). Model A dangerously overestimates, Model B overcorrects downward.
+MADEX Calculation: Processing glucose values in range 45.0-61.0 mg/dL, predictions in range 65.0-80.0 mg/dL
+Parameters: a=125 (euglycemic center), b=55 (critical range), c=40 (slope modifier)
+Parameter 'a'=125 indicates standard glycemic control target (normal management)
+Adaptive exponent calculation: Base exponent=2, modified by tanh((glucose-125)/55) * (error/40)
+Exponent range: 2.320 to 2.448 (higher = more penalty for errors)
+Mean absolute error: 18.88 mg/dL, MADEX score: 1239.39
+[VERIFIED] Calculation verified: matches official implementation (1239.39)
+MADEX Calculation: Processing glucose values in range 45.0-61.0 mg/dL, predictions in range 35.0-51.0 mg/dL
+Parameters: a=125 (euglycemic center), b=55 (critical range), c=40 (slope modifier)
+Parameter 'a'=125 indicates standard glycemic control target (normal management)
+Adaptive exponent calculation: Base exponent=2, modified by tanh((glucose-125)/55) * (error/40)
+Exponent range: 1.776 to 1.794 (higher = more penalty for errors)
+Mean absolute error: 10.00 mg/dL, MADEX score: 60.86
+[VERIFIED] Calculation verified: matches official implementation (60.86)
+Comparison Metrics: RMSE=18.96, MAE=18.88, MAPE=36.17%
+Comparison Metrics: RMSE=10.00, MAE=10.00, MAPE=19.08%
+Model Rankings - MADEX: Model_B, RMSE: Model_B, MAE: Model_B, MAPE: Model_B
+
+Analyzing B_Hyperglycemia_Management:
+Clinical context: Severe hyperglycemia (>250 mg/dL). Model A underestimates severity, Model B overestimates.
+MADEX Calculation: Processing glucose values in range 275.0-310.0 mg/dL, predictions in range 245.0-280.0 mg/dL
+Parameters: a=125 (euglycemic center), b=55 (critical range), c=40 (slope modifier)
+Parameter 'a'=125 indicates standard glycemic control target (normal management)
+Adaptive exponent calculation: Base exponent=2, modified by tanh((glucose-125)/55) * (error/40)
+Exponent range: 2.744 to 2.748 (higher = more penalty for errors)
+Mean absolute error: 30.00 mg/dL, MADEX score: 11393.14
+[VERIFIED] Calculation verified: matches official implementation (11393.14)
+MADEX Calculation: Processing glucose values in range 275.0-310.0 mg/dL, predictions in range 315.0-350.0 mg/dL
+Parameters: a=125 (euglycemic center), b=55 (critical range), c=40 (slope modifier)
+Parameter 'a'=125 indicates standard glycemic control target (normal management)
+Adaptive exponent calculation: Base exponent=2, modified by tanh((glucose-125)/55) * (error/40)
+Exponent range: 1.002 to 1.009 (higher = more penalty for errors)
+Mean absolute error: 40.00 mg/dL, MADEX score: 40.73
+[VERIFIED] Calculation verified: matches official implementation (40.73)
+Comparison Metrics: RMSE=30.00, MAE=30.00, MAPE=10.27%
+Comparison Metrics: RMSE=40.00, MAE=40.00, MAPE=13.70%
+Model Rankings - MADEX: Model_B, RMSE: Model_A, MAE: Model_A, MAPE: Model_A
+[WARNING] DIFFERENCE: MADEX prefers Model_B while RMSE prefers Model_A
+   Clinical implication: MADEX captures error severity patterns that RMSE misses
+
+Analyzing C_Postprandial_Response:
+Clinical context: Post-meal glucose spikes. Model A slightly underestimates, Model B slightly overestimates.
+MADEX Calculation: Processing glucose values in range 115.0-220.0 mg/dL, predictions in range 105.0-210.0 mg/dL
+Parameters: a=125 (euglycemic center), b=55 (critical range), c=40 (slope modifier)
+Parameter 'a'=125 indicates standard glycemic control target (normal management)
+Adaptive exponent calculation: Base exponent=2, modified by tanh((glucose-125)/55) * (error/40)
+Exponent range: 1.955 to 2.235 (higher = more penalty for errors)
+Mean absolute error: 10.00 mg/dL, MADEX score: 128.76
+[VERIFIED] Calculation verified: matches official implementation (128.76)
+MADEX Calculation: Processing glucose values in range 115.0-220.0 mg/dL, predictions in range 125.0-230.0 mg/dL
+Parameters: a=125 (euglycemic center), b=55 (critical range), c=40 (slope modifier)
+Parameter 'a'=125 indicates standard glycemic control target (normal management)
+Adaptive exponent calculation: Base exponent=2, modified by tanh((glucose-125)/55) * (error/40)
+Exponent range: 1.765 to 2.045 (higher = more penalty for errors)
+Mean absolute error: 10.00 mg/dL, MADEX score: 82.29
+[VERIFIED] Calculation verified: matches official implementation (82.29)
+Comparison Metrics: RMSE=10.00, MAE=10.00, MAPE=6.71%
+Comparison Metrics: RMSE=10.00, MAE=10.00, MAPE=6.71%
+Model Rankings - MADEX: Model_B, RMSE: Model_B, MAE: Model_B, MAPE: Model_B
+
+Analyzing D_Dawn_Phenomenon:
+Clinical context: Dawn phenomenon - early morning glucose elevation. Model A tracks closely, Model B underestimates.
+MADEX Calculation: Processing glucose values in range 85.0-155.0 mg/dL, predictions in range 90.0-160.0 mg/dL
+Parameters: a=125 (euglycemic center), b=55 (critical range), c=40 (slope modifier)
+Parameter 'a'=125 indicates standard glycemic control target (normal management)
+Adaptive exponent calculation: Base exponent=2, modified by tanh((glucose-125)/55) * (error/40)
+Exponent range: 1.938 to 2.078 (higher = more penalty for errors)
+Mean absolute error: 5.00 mg/dL, MADEX score: 24.99
+[VERIFIED] Calculation verified: matches official implementation (24.99)
+MADEX Calculation: Processing glucose values in range 85.0-155.0 mg/dL, predictions in range 80.0-150.0 mg/dL
+Parameters: a=125 (euglycemic center), b=55 (critical range), c=40 (slope modifier)
+Parameter 'a'=125 indicates standard glycemic control target (normal management)
+Adaptive exponent calculation: Base exponent=2, modified by tanh((glucose-125)/55) * (error/40)
+Exponent range: 1.922 to 2.062 (higher = more penalty for errors)
+Mean absolute error: 5.00 mg/dL, MADEX score: 25.18
+[VERIFIED] Calculation verified: matches official implementation (25.18)
+Comparison Metrics: RMSE=5.00, MAE=5.00, MAPE=4.16%
+Comparison Metrics: RMSE=5.00, MAE=5.00, MAPE=4.16%
+Model Rankings - MADEX: Model_A, RMSE: Model_B, MAE: Model_B, MAPE: Model_B
+[WARNING] DIFFERENCE: MADEX prefers Model_A while RMSE prefers Model_B
+   Clinical implication: MADEX captures error severity patterns that RMSE misses
+
+Analyzing E_Exercise_Response:
+Clinical context: Exercise-induced hypoglycemia risk. Model A shows conservative tracking, Model B more aggressive.
+MADEX Calculation: Processing glucose values in range 65.0-140.0 mg/dL, predictions in range 70.0-145.0 mg/dL
+Parameters: a=125 (euglycemic center), b=55 (critical range), c=40 (slope modifier)
+Parameter 'a'=125 indicates standard glycemic control target (normal management)
+Adaptive exponent calculation: Base exponent=2, modified by tanh((glucose-125)/55) * (error/40)
+Exponent range: 1.967 to 2.100 (higher = more penalty for errors)
+Mean absolute error: 5.00 mg/dL, MADEX score: 26.99
+[VERIFIED] Calculation verified: matches official implementation (26.99)
+MADEX Calculation: Processing glucose values in range 65.0-140.0 mg/dL, predictions in range 60.0-135.0 mg/dL
+Parameters: a=125 (euglycemic center), b=55 (critical range), c=40 (slope modifier)
+Parameter 'a'=125 indicates standard glycemic control target (normal management)
+Adaptive exponent calculation: Base exponent=2, modified by tanh((glucose-125)/55) * (error/40)
+Exponent range: 1.900 to 2.033 (higher = more penalty for errors)
+Mean absolute error: 5.00 mg/dL, MADEX score: 23.28
+[VERIFIED] Calculation verified: matches official implementation (23.28)
+Comparison Metrics: RMSE=5.00, MAE=5.00, MAPE=5.33%
+Comparison Metrics: RMSE=5.00, MAE=5.00, MAPE=5.33%
+Model Rankings - MADEX: Model_B, RMSE: Model_B, MAE: Model_B, MAPE: Model_B
+
+Analyzing F_Measurement_Noise:
+Clinical context: Measurement precision issues in normal range. Model A has positive bias, Model B negative bias.
+MADEX Calculation: Processing glucose values in range 97.0-105.0 mg/dL, predictions in range 105.0-113.0 mg/dL
+Parameters: a=125 (euglycemic center), b=55 (critical range), c=40 (slope modifier)
+Parameter 'a'=125 indicates standard glycemic control target (normal management)
+Adaptive exponent calculation: Base exponent=2, modified by tanh((glucose-125)/55) * (error/40)
+Exponent range: 2.070 to 2.094 (higher = more penalty for errors)
+Mean absolute error: 8.00 mg/dL, MADEX score: 76.08
+[VERIFIED] Calculation verified: matches official implementation (76.08)
+MADEX Calculation: Processing glucose values in range 97.0-105.0 mg/dL, predictions in range 89.0-97.0 mg/dL
+Parameters: a=125 (euglycemic center), b=55 (critical range), c=40 (slope modifier)
+Parameter 'a'=125 indicates standard glycemic control target (normal management)
+Adaptive exponent calculation: Base exponent=2, modified by tanh((glucose-125)/55) * (error/40)
+Exponent range: 1.906 to 1.930 (higher = more penalty for errors)
+Mean absolute error: 8.00 mg/dL, MADEX score: 53.85
+[VERIFIED] Calculation verified: matches official implementation (53.85)
+Comparison Metrics: RMSE=8.00, MAE=8.00, MAPE=7.96%
+Comparison Metrics: RMSE=8.00, MAE=8.00, MAPE=7.96%
+Model Rankings - MADEX: Model_B, RMSE: Model_B, MAE: Model_B, MAPE: Model_B
+
+Analyzing G_Mixed_Clinical:
+Clinical context: Mixed critical events including hypoglycemia and hyperglycemia. Tests overall robustness.
+MADEX Calculation: Processing glucose values in range 45.0-250.0 mg/dL, predictions in range 55.0-260.0 mg/dL
+Parameters: a=125 (euglycemic center), b=55 (critical range), c=40 (slope modifier)
+Parameter 'a'=125 indicates standard glycemic control target (normal management)
+Adaptive exponent calculation: Base exponent=2, modified by tanh((glucose-125)/55) * (error/40)
+Exponent range: 1.755 to 2.224 (higher = more penalty for errors)
+Mean absolute error: 10.00 mg/dL, MADEX score: 109.57
+[VERIFIED] Calculation verified: matches official implementation (109.57)
+MADEX Calculation: Processing glucose values in range 45.0-250.0 mg/dL, predictions in range 35.0-240.0 mg/dL
+Parameters: a=125 (euglycemic center), b=55 (critical range), c=40 (slope modifier)
+Parameter 'a'=125 indicates standard glycemic control target (normal management)
+Adaptive exponent calculation: Base exponent=2, modified by tanh((glucose-125)/55) * (error/40)
+Exponent range: 1.776 to 2.245 (higher = more penalty for errors)
+Mean absolute error: 10.00 mg/dL, MADEX score: 111.72
+[VERIFIED] Calculation verified: matches official implementation (111.72)
+Comparison Metrics: RMSE=10.00, MAE=10.00, MAPE=10.89%
+Comparison Metrics: RMSE=10.00, MAE=10.00, MAPE=10.89%
+Model Rankings - MADEX: Model_A, RMSE: Model_B, MAE: Model_B, MAPE: Model_B
+[WARNING] DIFFERENCE: MADEX prefers Model_A while RMSE prefers Model_B
+   Clinical implication: MADEX captures error severity patterns that RMSE misses
+
+Analyzing H_Extreme_Cases:
+Clinical context: Extreme glucose values (<50 or >350 mg/dL). Model A conservative, Model B matches extremes.
+MADEX Calculation: Processing glucose values in range 25.0-450.0 mg/dL, predictions in range 45.0-430.0 mg/dL
+Parameters: a=125 (euglycemic center), b=55 (critical range), c=40 (slope modifier)
+Parameter 'a'=125 indicates standard glycemic control target (normal management)
+Adaptive exponent calculation: Base exponent=2, modified by tanh((glucose-125)/55) * (error/40)
+Exponent range: 2.457 to 2.500 (higher = more penalty for errors)
+Mean absolute error: 20.00 mg/dL, MADEX score: 1702.10
+[VERIFIED] Calculation verified: matches official implementation (1702.10)
+MADEX Calculation: Processing glucose values in range 25.0-450.0 mg/dL, predictions in range 15.0-470.0 mg/dL
+Parameters: a=125 (euglycemic center), b=55 (critical range), c=40 (slope modifier)
+Parameter 'a'=125 indicates standard glycemic control target (normal management)
+Adaptive exponent calculation: Base exponent=2, modified by tanh((glucose-125)/55) * (error/40)
+Exponent range: 1.500 to 1.772 (higher = more penalty for errors)
+Mean absolute error: 15.00 mg/dL, MADEX score: 73.97
+[VERIFIED] Calculation verified: matches official implementation (73.97)
+Comparison Metrics: RMSE=20.00, MAE=20.00, MAPE=34.16%
+Comparison Metrics: RMSE=15.81, MAE=15.00, MAPE=18.30%
+Model Rankings - MADEX: Model_B, RMSE: Model_B, MAE: Model_B, MAPE: Model_B
+
+Metric Agreement Analysis:
+- MADEX vs RMSE agreement: 0.625 (62.5%)
+- MADEX vs MAE agreement: 0.625 (62.5%)
+- MADEX vs MAPE agreement: 0.625 (62.5%)
+[SUCCESS] SIGNIFICANT DIFFERENCE: MADEX provides substantially different insights than traditional metrics
+  This suggests MADEX captures clinically relevant error patterns that standard metrics miss

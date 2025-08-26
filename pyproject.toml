@@ -13,6 +13,8 @@ dependencies = [
     "openpyxl",
     "scikit-fuzzy",
     "networkx",
+    "seaborn",
+    "scipy",
 ]
 
 [project.optional-dependencies]
