@@ -1,5 +1,5 @@
 from unittest import TestCase
-from splib.diabetes.cega import clarke_error_grid
+from new_metric.cega import clarke_error_grid
 
 
 class TestCega(TestCase):

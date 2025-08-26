@@ -27,7 +27,7 @@ def graph_vs_mse(value, value_range, action=None, save_folder='.'):
     plt.axvline(value, label='Reference Value', color='k', ls='--')
     plt.xlabel('Predicted Value')
     plt.ylabel('Error')
-    plt.title('{} +- {}'.format(value, value_range))
+    plt.title(f'{value} +- {value_range}')
     plt.legend()
     if action == 'save':
         plt.savefig(
