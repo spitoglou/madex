@@ -1,0 +1,362 @@
+
+====================================================================================================
+MADEX BOOTSTRAP STATISTICAL VALIDATION ANALYSIS
+====================================================================================================
+Analysis initiated at: 2025-08-26 23:15:50
+Analysis type: Bootstrap confidence interval validation for MADEX metric
+Clinical context: Glucose prediction model statistical validation
+
+ANALYSIS OBJECTIVES:
+1. Generate bootstrap confidence intervals for MADEX across clinical scenarios
+2. Compare MADEX performance against traditional metrics (RMSE, MAE)
+3. Assess clinical risk using Clarke Error Grid Analysis
+4. Evaluate statistical significance of model differences
+5. Analyze hypoglycemia and hyperglycemia detection sensitivity
+
+================================================================================
+CLINICAL SCENARIO ANALYSIS
+================================================================================
+
+Scenario A: Hypoglycemia Detection
+Description: Critical low glucose events (45-61 mg/dL)
+Risk Level: CRITICAL
+Clinical Context: Life-threatening hypoglycemia requiring immediate intervention
+
+Scenario B: Hyperglycemia Management
+Description: Sustained high glucose (275-310 mg/dL)
+Risk Level: HIGH
+Clinical Context: Severe hyperglycemia requiring aggressive treatment
+
+Scenario C: Postprandial Response
+Description: Meal-induced glucose spikes (115-220 mg/dL)
+Risk Level: MODERATE
+Clinical Context: Post-meal glucose management challenges
+
+Scenario D: Dawn Phenomenon
+Description: Early morning glucose rise (85-155 mg/dL)
+Risk Level: LOW
+Clinical Context: Natural circadian glucose elevation
+
+Scenario E: Exercise Response
+Description: Activity-induced glucose drop (65-140 mg/dL)
+Risk Level: MODERATE
+Clinical Context: Exercise-induced hypoglycemia risk
+
+Scenario F: Measurement Noise
+Description: Sensor accuracy challenges (97-105 mg/dL)
+Risk Level: LOW
+Clinical Context: Measurement precision in normal glucose range
+
+Scenario G: Mixed Clinical
+Description: Combined challenging scenarios (45-250 mg/dL)
+Risk Level: CRITICAL
+Clinical Context: Mixed critical events testing robustness
+
+Scenario H: Extreme Cases
+Description: Life-threatening glucose extremes (25-450 mg/dL)
+Risk Level: CRITICAL
+Clinical Context: Extreme glucose values requiring emergency care
+
+================================================================================
+BOOTSTRAP ANALYSIS EXECUTION
+================================================================================
+Bootstrap parameters: n_bootstrap=1000, confidence_interval=95%
+MADEX parameters: a=125.0 (euglycemic center), b=55.0 (critical range), c=40.0 (slope modifier)
+Total scenarios to analyze: 8
+
+INITIATING SCENARIO-BY-SCENARIO ANALYSIS:
+--------------------------------------------------
+
+[1/8] ANALYZING SCENARIO A: Hypoglycemia Detection
+Clinical Context: Life-threatening hypoglycemia requiring immediate intervention
+Risk Level: CRITICAL
+Data points: 8, Glucose range: 45.0-61.0 mg/dL
+Model A predictions: 65.0-80.0 mg/dL
+Model B predictions: 35.0-51.0 mg/dL
+Computing bootstrap confidence intervals (n=1000)...
+Bootstrap results computed:
+  MADEX - Model A: 1242.81 (997.24-1479.36)
+  MADEX - Model B: 60.87 (60.30-61.45)
+  RMSE - Model A: 18.94 (17.68-19.88)
+  RMSE - Model B: 10.00 (10.00-10.00)
+Performing Clarke Error Grid Analysis...
+Clarke Error Grid zones - Model A: ['A (Accurate): 4', 'B (Acceptable): 0', 'C (Overcorrecting): 0', 'D (Failure to Detect): 4', 'E (Erroneous): 0']
+Clarke Error Grid zones - Model B: ['A (Accurate): 8', 'B (Acceptable): 0', 'C (Overcorrecting): 0', 'D (Failure to Detect): 0', 'E (Erroneous): 0']
+Clinical risk scores: Model A = 20, Model B = 0
+[CLINICAL ASSESSMENT] Model B has lower clinical risk (better safety profile)
+[MADEX ASSESSMENT] Model B shows better MADEX performance (60.87 vs 1242.81)
+[SUCCESS] MADEX confidence intervals do not overlap - significant difference detected
+
+[2/8] ANALYZING SCENARIO B: Hyperglycemia Management
+Clinical Context: Severe hyperglycemia requiring aggressive treatment
+Risk Level: HIGH
+Data points: 8, Glucose range: 275.0-310.0 mg/dL
+Model A predictions: 245.0-280.0 mg/dL
+Model B predictions: 315.0-350.0 mg/dL
+Computing bootstrap confidence intervals (n=1000)...
+Bootstrap results computed:
+  MADEX - Model A: 11392.82 (11354.70-11428.84)
+  MADEX - Model B: 40.74 (40.53-40.96)
+  RMSE - Model A: 30.00 (30.00-30.00)
+  RMSE - Model B: 40.00 (40.00-40.00)
+Performing Clarke Error Grid Analysis...
+Clarke Error Grid zones - Model A: ['A (Accurate): 8', 'B (Acceptable): 0', 'C (Overcorrecting): 0', 'D (Failure to Detect): 0', 'E (Erroneous): 0']
+Clarke Error Grid zones - Model B: ['A (Accurate): 8', 'B (Acceptable): 0', 'C (Overcorrecting): 0', 'D (Failure to Detect): 0', 'E (Erroneous): 0']
+Clinical risk scores: Model A = 0, Model B = 0
+[CLINICAL ASSESSMENT] Both models have equivalent clinical risk
+[MADEX ASSESSMENT] Model B shows better MADEX performance (40.74 vs 11392.82)
+[SUCCESS] MADEX confidence intervals do not overlap - significant difference detected
+
+[3/8] ANALYZING SCENARIO C: Postprandial Response
+Clinical Context: Post-meal glucose management challenges
+Risk Level: MODERATE
+Data points: 8, Glucose range: 115.0-220.0 mg/dL
+Model A predictions: 105.0-210.0 mg/dL
+Model B predictions: 125.0-230.0 mg/dL
+Computing bootstrap confidence intervals (n=1000)...
+Bootstrap results computed:
+  MADEX - Model A: 128.61 (106.94-149.55)
+  MADEX - Model B: 82.01 (68.88-96.05)
+  RMSE - Model A: 10.00 (10.00-10.00)
+  RMSE - Model B: 10.00 (10.00-10.00)
+Performing Clarke Error Grid Analysis...
+Clarke Error Grid zones - Model A: ['A (Accurate): 8', 'B (Acceptable): 0', 'C (Overcorrecting): 0', 'D (Failure to Detect): 0', 'E (Erroneous): 0']
+Clarke Error Grid zones - Model B: ['A (Accurate): 8', 'B (Acceptable): 0', 'C (Overcorrecting): 0', 'D (Failure to Detect): 0', 'E (Erroneous): 0']
+Clinical risk scores: Model A = 0, Model B = 0
+[CLINICAL ASSESSMENT] Both models have equivalent clinical risk
+[MADEX ASSESSMENT] Model B shows better MADEX performance (82.01 vs 128.61)
+[SUCCESS] MADEX confidence intervals do not overlap - significant difference detected
+
+[4/8] ANALYZING SCENARIO D: Dawn Phenomenon
+Clinical Context: Natural circadian glucose elevation
+Risk Level: LOW
+Data points: 8, Glucose range: 85.0-155.0 mg/dL
+Model A predictions: 90.0-160.0 mg/dL
+Model B predictions: 80.0-150.0 mg/dL
+Computing bootstrap confidence intervals (n=1000)...
+Bootstrap results computed:
+  MADEX - Model A: 24.99 (23.57-26.45)
+  MADEX - Model B: 25.17 (23.77-26.42)
+  RMSE - Model A: 5.00 (5.00-5.00)
+  RMSE - Model B: 5.00 (5.00-5.00)
+Performing Clarke Error Grid Analysis...
+Clarke Error Grid zones - Model A: ['A (Accurate): 8', 'B (Acceptable): 0', 'C (Overcorrecting): 0', 'D (Failure to Detect): 0', 'E (Erroneous): 0']
+Clarke Error Grid zones - Model B: ['A (Accurate): 8', 'B (Acceptable): 0', 'C (Overcorrecting): 0', 'D (Failure to Detect): 0', 'E (Erroneous): 0']
+Clinical risk scores: Model A = 0, Model B = 0
+[CLINICAL ASSESSMENT] Both models have equivalent clinical risk
+[MADEX ASSESSMENT] Model A shows better MADEX performance (24.99 vs 25.17)
+[WARNING] MADEX confidence intervals overlap - difference may not be statistically significant
+
+[5/8] ANALYZING SCENARIO E: Exercise Response
+Clinical Context: Exercise-induced hypoglycemia risk
+Risk Level: MODERATE
+Data points: 8, Glucose range: 65.0-140.0 mg/dL
+Model A predictions: 70.0-145.0 mg/dL
+Model B predictions: 60.0-135.0 mg/dL
+Computing bootstrap confidence intervals (n=1000)...
+Bootstrap results computed:
+  MADEX - Model A: 27.01 (25.58-28.29)
+  MADEX - Model B: 23.28 (22.21-24.56)
+  RMSE - Model A: 5.00 (5.00-5.00)
+  RMSE - Model B: 5.00 (5.00-5.00)
+Performing Clarke Error Grid Analysis...
+Clarke Error Grid zones - Model A: ['A (Accurate): 8', 'B (Acceptable): 0', 'C (Overcorrecting): 0', 'D (Failure to Detect): 0', 'E (Erroneous): 0']
+Clarke Error Grid zones - Model B: ['A (Accurate): 8', 'B (Acceptable): 0', 'C (Overcorrecting): 0', 'D (Failure to Detect): 0', 'E (Erroneous): 0']
+Clinical risk scores: Model A = 0, Model B = 0
+[CLINICAL ASSESSMENT] Both models have equivalent clinical risk
+[MADEX ASSESSMENT] Model B shows better MADEX performance (23.28 vs 27.01)
+[SUCCESS] MADEX confidence intervals do not overlap - significant difference detected
+
+[6/8] ANALYZING SCENARIO F: Measurement Noise
+Clinical Context: Measurement precision in normal glucose range
+Risk Level: LOW
+Data points: 8, Glucose range: 97.0-105.0 mg/dL
+Model A predictions: 105.0-113.0 mg/dL
+Model B predictions: 89.0-97.0 mg/dL
+Computing bootstrap confidence intervals (n=1000)...
+Bootstrap results computed:
+  MADEX - Model A: 76.09 (75.31-76.86)
+  MADEX - Model B: 53.86 (53.30-54.43)
+  RMSE - Model A: 8.00 (8.00-8.00)
+  RMSE - Model B: 8.00 (8.00-8.00)
+Performing Clarke Error Grid Analysis...
+Clarke Error Grid zones - Model A: ['A (Accurate): 8', 'B (Acceptable): 0', 'C (Overcorrecting): 0', 'D (Failure to Detect): 0', 'E (Erroneous): 0']
+Clarke Error Grid zones - Model B: ['A (Accurate): 8', 'B (Acceptable): 0', 'C (Overcorrecting): 0', 'D (Failure to Detect): 0', 'E (Erroneous): 0']
+Clinical risk scores: Model A = 0, Model B = 0
+[CLINICAL ASSESSMENT] Both models have equivalent clinical risk
+[MADEX ASSESSMENT] Model B shows better MADEX performance (53.86 vs 76.09)
+[SUCCESS] MADEX confidence intervals do not overlap - significant difference detected
+
+[7/8] ANALYZING SCENARIO G: Mixed Clinical
+Clinical Context: Mixed critical events testing robustness
+Risk Level: CRITICAL
+Data points: 8, Glucose range: 45.0-250.0 mg/dL
+Model A predictions: 55.0-260.0 mg/dL
+Model B predictions: 35.0-240.0 mg/dL
+Computing bootstrap confidence intervals (n=1000)...
+Bootstrap results computed:
+  MADEX - Model A: 109.59 (76.41-143.22)
+  MADEX - Model B: 111.52 (76.35-146.63)
+  RMSE - Model A: 10.00 (10.00-10.00)
+  RMSE - Model B: 10.00 (10.00-10.00)
+Performing Clarke Error Grid Analysis...
+Clarke Error Grid zones - Model A: ['A (Accurate): 8', 'B (Acceptable): 0', 'C (Overcorrecting): 0', 'D (Failure to Detect): 0', 'E (Erroneous): 0']
+Clarke Error Grid zones - Model B: ['A (Accurate): 8', 'B (Acceptable): 0', 'C (Overcorrecting): 0', 'D (Failure to Detect): 0', 'E (Erroneous): 0']
+Clinical risk scores: Model A = 0, Model B = 0
+[CLINICAL ASSESSMENT] Both models have equivalent clinical risk
+[MADEX ASSESSMENT] Model A shows better MADEX performance (109.59 vs 111.52)
+[WARNING] MADEX confidence intervals overlap - difference may not be statistically significant
+
+[8/8] ANALYZING SCENARIO H: Extreme Cases
+Clinical Context: Extreme glucose values requiring emergency care
+Risk Level: CRITICAL
+Data points: 8, Glucose range: 25.0-450.0 mg/dL
+Model A predictions: 45.0-430.0 mg/dL
+Model B predictions: 15.0-470.0 mg/dL
+Computing bootstrap confidence intervals (n=1000)...
+Bootstrap results computed:
+  MADEX - Model A: 1701.88 (1639.79-1761.30)
+  MADEX - Model B: 73.98 (62.39-81.97)
+  RMSE - Model A: 20.00 (20.00-20.00)
+  RMSE - Model B: 15.65 (11.73-19.04)
+Performing Clarke Error Grid Analysis...
+Clarke Error Grid zones - Model A: ['A (Accurate): 8', 'B (Acceptable): 0', 'C (Overcorrecting): 0', 'D (Failure to Detect): 0', 'E (Erroneous): 0']
+Clarke Error Grid zones - Model B: ['A (Accurate): 8', 'B (Acceptable): 0', 'C (Overcorrecting): 0', 'D (Failure to Detect): 0', 'E (Erroneous): 0']
+Clinical risk scores: Model A = 0, Model B = 0
+[CLINICAL ASSESSMENT] Both models have equivalent clinical risk
+[MADEX ASSESSMENT] Model B shows better MADEX performance (73.98 vs 1701.88)
+[SUCCESS] MADEX confidence intervals do not overlap - significant difference detected
+
+================================================================================
+STATISTICAL SIGNIFICANCE TESTING
+================================================================================
+Performing Wilcoxon signed-rank tests across all scenarios
+Testing hypothesis: Model A vs Model B performance differences
+
+WILCOXON SIGNED-RANK TEST RESULTS:
+---------------------------------------------
+
+MADEX Statistical Analysis:
+  Wilcoxon statistic: 3.00
+  P-value: 0.0391
+  Cohen's d (effect size): 0.45
+  [SUCCESS] significant (p < 0.05) - Evidence of difference
+  Effect size interpretation: small effect size
+  [INTERPRETATION] Model B shows better MADEX performance on average
+
+RMSE Statistical Analysis:
+  Wilcoxon statistic: 3.00
+  P-value: 1.0000
+  Cohen's d (effect size): 0.08
+  [WARNING] not significant (p >= 0.10) - No evidence of difference
+  Effect size interpretation: negligible effect size
+  [INTERPRETATION] Model B shows better RMSE performance on average
+
+MAE Statistical Analysis:
+  Wilcoxon statistic: 3.00
+  P-value: 1.0000
+  Cohen's d (effect size): 0.09
+  [WARNING] not significant (p >= 0.10) - No evidence of difference
+  Effect size interpretation: negligible effect size
+  [INTERPRETATION] Model B shows better MAE performance on average
+
+================================================================================
+CLINICAL DETECTION SENSITIVITY ANALYSIS
+================================================================================
+Evaluating model sensitivity for critical glucose events
+This analysis assesses how well models detect dangerous glucose levels
+
+HYPOGLYCEMIA DETECTION SENSITIVITY (<70 mg/dL):
+--------------------------------------------------
+Hypoglycemia is life-threatening and requires immediate detection
+Sensitivity = True Positives / (True Positives + False Negatives)
+
+Scenario A (Hypoglycemia Detection) Hypoglycemia Detection:
+  Model A sensitivity: 0.25 (25.0%)
+  Model B sensitivity: 1.00 (100.0%)
+  [CLINICAL] Model B better at detecting hypoglycemia (safer)
+  [SUCCESS] Excellent hypoglycemia detection capability (>=90%)
+
+Scenario B (Hyperglycemia Management): No hypoglycemic events to detect
+
+Scenario E (Exercise Response) Hypoglycemia Detection:
+  Model A sensitivity: 0.00 (0.0%)
+  Model B sensitivity: 1.00 (100.0%)
+  [CLINICAL] Model B better at detecting hypoglycemia (safer)
+  [SUCCESS] Excellent hypoglycemia detection capability (>=90%)
+
+Scenario G (Mixed Clinical) Hypoglycemia Detection:
+  Model A sensitivity: 0.67 (66.7%)
+  Model B sensitivity: 1.00 (100.0%)
+  [CLINICAL] Model B better at detecting hypoglycemia (safer)
+  [SUCCESS] Excellent hypoglycemia detection capability (>=90%)
+
+Scenario H (Extreme Cases) Hypoglycemia Detection:
+  Model A sensitivity: 1.00 (100.0%)
+  Model B sensitivity: 1.00 (100.0%)
+  [CLINICAL] Both models equivalent for hypoglycemia detection
+  [SUCCESS] Excellent hypoglycemia detection capability (>=90%)
+
+HYPERGLYCEMIA DETECTION SENSITIVITY (>180 mg/dL):
+--------------------------------------------------
+Hyperglycemia detection is crucial for preventing diabetic complications
+High glucose levels require prompt intervention to prevent ketoacidosis
+
+Scenario A (Hypoglycemia Detection): No hyperglycemic events to detect
+
+Scenario B (Hyperglycemia Management) Hyperglycemia Detection:
+  Model A sensitivity: 1.00 (100.0%)
+  Model B sensitivity: 1.00 (100.0%)
+  [CLINICAL] Both models equivalent for hyperglycemia detection
+  [SUCCESS] Excellent hyperglycemia detection capability (>=90%)
+
+Scenario C (Postprandial Response) Hyperglycemia Detection:
+  Model A sensitivity: 1.00 (100.0%)
+  Model B sensitivity: 1.00 (100.0%)
+  [CLINICAL] Both models equivalent for hyperglycemia detection
+  [SUCCESS] Excellent hyperglycemia detection capability (>=90%)
+
+Scenario G (Mixed Clinical) Hyperglycemia Detection:
+  Model A sensitivity: 1.00 (100.0%)
+  Model B sensitivity: 1.00 (100.0%)
+  [CLINICAL] Both models equivalent for hyperglycemia detection
+  [SUCCESS] Excellent hyperglycemia detection capability (>=90%)
+
+Scenario H (Extreme Cases) Hyperglycemia Detection:
+  Model A sensitivity: 1.00 (100.0%)
+  Model B sensitivity: 1.00 (100.0%)
+  [CLINICAL] Both models equivalent for hyperglycemia detection
+  [SUCCESS] Excellent hyperglycemia detection capability (>=90%)
+
+====================================================================================================
+BOOTSTRAP VALIDATION ANALYSIS SUMMARY
+====================================================================================================
+Analysis completed at: 2025-08-26 23:15:53
+Total scenarios analyzed: 8
+Bootstrap samples per metric: 1000
+Confidence interval level: 95%
+
+KEY FINDINGS:
+---------------
+1. MADEX Statistical Significance: p=0.0391
+   [SUCCESS] MADEX shows statistically significant model differences
+2. Traditional Metrics Comparison:
+   RMSE p-value: 1.0000
+   MAE p-value: 1.0000
+   [SUCCESS] MADEX more sensitive than traditional metrics
+3. Hypoglycemia Detection Performance:
+   Model A average sensitivity: 0.48 (47.9%)
+   Model B average sensitivity: 1.00 (100.0%)
+   [CLINICAL RECOMMENDATION] Model B preferred for hypoglycemia detection
+4. Hyperglycemia Detection Performance:
+   Model A average sensitivity: 1.00 (100.0%)
+   Model B average sensitivity: 1.00 (100.0%)
+
+CONCLUSIONS:
+------------
+This bootstrap validation provides statistical confidence intervals for MADEX
+and traditional metrics across clinically relevant glucose prediction scenarios.
+The analysis enables evidence-based model selection for glucose monitoring systems.
+
+[ANALYSIS COMPLETE] Bootstrap validation analysis finished successfully.
+Results logged to bootstrap_llm_narrative.log for LLM consumption.

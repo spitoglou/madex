@@ -3,6 +3,7 @@ import logging
 import warnings
 from datetime import datetime
 from itertools import product
+from pathlib import Path
 
 # Third-party imports
 import matplotlib.pyplot as plt
@@ -18,12 +19,15 @@ from new_metric import mean_adjusted_exponent_error, graph_vs_mse
 # Configure warnings
 warnings.filterwarnings('ignore')
 
+# Get the directory where this script is located
+script_dir = Path(__file__).parent
+
 # Configure logging for narrative output
 logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(levelname)s - %(message)s',
     handlers=[
-        logging.FileHandler('madex_analysis_narrative.log', encoding='utf-8'),
+        logging.FileHandler(script_dir / 'madex_analysis_narrative.log', encoding='utf-8'),
         logging.StreamHandler()
     ]
 )
@@ -31,7 +35,7 @@ logger = logging.getLogger(__name__)
 
 # Create a separate logger for LLM-friendly narrative
 narrative_logger = logging.getLogger('narrative')
-narrative_handler = logging.FileHandler('madex_llm_narrative.log', mode='w', encoding='utf-8')
+narrative_handler = logging.FileHandler(script_dir / 'madex_llm_narrative.log', mode='w', encoding='utf-8')
 narrative_handler.setLevel(logging.INFO)
 narrative_formatter = logging.Formatter('%(message)s')
 narrative_handler.setFormatter(narrative_formatter)

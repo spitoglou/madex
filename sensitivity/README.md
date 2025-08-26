@@ -22,6 +22,8 @@ This directory contains the comprehensive sensitivity analysis for the MADEX (Me
 - **`madex_llm_narrative.log`** - Clean narrative log optimized for LLM consumption
 - **`madex_analysis_narrative.log`** - Detailed technical log with timestamps
 
+**Note**: Log files are always created in the sensitivity directory, regardless of where the script is executed from.
+
 ## Usage
 
 ### Run Sensitivity Analysis
