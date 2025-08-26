@@ -1,24 +1,67 @@
-# image: "python:3.7" #commands to run in the Docker container before starting each job.
-image: "conda/miniconda3" 
+# GitLab CI Configuration for new-metric project
+# This configuration uses uv for fast dependency management
+# Python version is pinned via .python-version file
 
+# Use Python 3.13 to match the pinned version
+image: "python:3.13"
+
+# Cache uv dependencies for faster builds
 cache:
   paths:
-    - /usr/local/pkgs
-    - /root/.conda/pkgs    
-# commands to run in the Docker container before starting each job.
+    - .cache/uv
+    - .venv/
+
+# Set up environment variables for uv
+variables:
+  UV_CACHE_DIR: "$CI_PROJECT_DIR/.cache/uv"
+  UV_VENV: ".venv"
+
+# Commands to run before each job
 before_script:
   - python --version
-  - conda info
-  - conda env create -f environment.yml
-  - source activate new_metric 
-stages:
-  # - Static Analysis
-  - Test
-pytest:
-  stage: Test
-  tags:
-        - ci
-        - ssh
+  - pip install uv
+  - uv venv
+  - source .venv/bin/activate
+  # Use uv sync if lock file exists, otherwise install with dev dependencies
+  - |
+    if [ -f "uv.lock" ]; then
+      echo "Using uv.lock for faster dependency resolution"
+      uv sync --dev
+    else
+      echo "Installing with editable mode and dev dependencies"
+      uv pip install -e ".[dev]"
+    fi
 
+stages:
+  - test
+  - lint
+
+# Test stage
+test:
+  stage: test
+  tags:
+    - ci
+    - ssh
   script:
-  - pytest --cov
+    - source .venv/bin/activate
+    - pytest --cov=src --cov-report=term --cov-report=xml:coverage.xml
+  artifacts:
+    reports:
+      coverage_report:
+        coverage_format: cobertura
+        path: coverage.xml
+    paths:
+      - coverage.xml
+    expire_in: 1 week
+  coverage: '/TOTAL.*\s+(\d+%)$/'
+
+# Lint stage
+lint:
+  stage: lint
+  tags:
+    - ci
+    - ssh
+  script:
+    - source .venv/bin/activate
+    - flake8 src/ tests/
+  allow_failure: true
