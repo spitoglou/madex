@@ -1,0 +1,392 @@
+2025-12-01 22:14:22,593 - INFO - 
+====================================================================================================
+2025-12-01 22:14:22,594 - INFO - EXTENDED PARAMETER SENSITIVITY TESTING FOR MADEX METRIC ANALYSIS
+2025-12-01 22:14:22,594 - INFO - ====================================================================================================
+2025-12-01 22:14:22,594 - INFO - Analysis initiated at: 2025-12-01 22:14:22
+2025-12-01 22:14:22,595 - INFO - Analysis type: Extended parameter sensitivity testing for MADEX metric
+2025-12-01 22:14:22,595 - INFO - Clinical context: Glucose prediction model evaluation with 50-point scenarios
+2025-12-01 22:14:22,596 - INFO - 
+ANALYSIS OBJECTIVES:
+2025-12-01 22:14:22,597 - INFO - 1. Validate MADEX robustness across clinical parameter ranges with extended data
+2025-12-01 22:14:22,597 - INFO - 2. Identify optimal parameter combinations for different clinical contexts
+2025-12-01 22:14:22,598 - INFO - 3. Compare MADEX performance against traditional metrics (RMSE, MAE, MAPE)
+2025-12-01 22:14:22,598 - INFO - 4. Analyze disagreement cases where MADEX differs from traditional metrics
+2025-12-01 22:14:22,599 - INFO - 5. Demonstrate MADEX clinical superiority in glucose-context-aware evaluation
+2025-12-01 22:14:22,599 - INFO - 6. Assess impact of larger sample size (50 points) on ranking stability
+2025-12-01 22:14:22,599 - INFO - 
+================================================================================
+2025-12-01 22:14:22,600 - INFO - MADEX SENSITIVITY ANALYSIS INITIATED
+2025-12-01 22:14:22,600 - INFO - ================================================================================
+2025-12-01 22:14:22,600 - INFO - Parameter ranges being tested:
+2025-12-01 22:14:22,600 - INFO - - Parameter 'a' (euglycemic center): [110, 125, 140] mg/dL
+2025-12-01 22:14:22,601 - INFO - - Parameter 'b' (critical range): [40, 55, 70, 80]
+2025-12-01 22:14:22,601 - INFO - - Parameter 'c' (slope modifier): [20, 30, 40, 50, 60, 80]
+2025-12-01 22:14:22,601 - INFO - Total parameter combinations to test: 72
+2025-12-01 22:14:22,602 - INFO - 
+--------------------------------------------------
+2025-12-01 22:14:22,602 - INFO - ESTABLISHING BASELINE RANKINGS
+2025-12-01 22:14:22,602 - INFO - --------------------------------------------------
+2025-12-01 22:14:22,643 - INFO - 
+================================================================================
+2025-12-01 22:14:22,644 - INFO - PARAMETER EFFECT ANALYSIS
+2025-12-01 22:14:22,644 - INFO - ================================================================================
+2025-12-01 22:14:22,666 - INFO - 
+================================================================================
+2025-12-01 22:14:22,666 - INFO - MADEX VS TRADITIONAL METRICS COMPARISON
+2025-12-01 22:14:22,667 - INFO - ================================================================================
+2025-12-01 22:14:22,667 - INFO - Comparison Metrics: RMSE=18.96, MAE=18.88, MAPE=36.17%
+2025-12-01 22:14:22,668 - INFO - Comparison Metrics: RMSE=10.00, MAE=10.00, MAPE=19.08%
+2025-12-01 22:14:22,668 - INFO - Comparison Metrics: RMSE=30.00, MAE=30.00, MAPE=10.27%
+2025-12-01 22:14:22,669 - INFO - Comparison Metrics: RMSE=40.00, MAE=40.00, MAPE=13.70%
+2025-12-01 22:14:22,669 - INFO - Comparison Metrics: RMSE=10.00, MAE=10.00, MAPE=6.71%
+2025-12-01 22:14:22,670 - INFO - Comparison Metrics: RMSE=10.00, MAE=10.00, MAPE=6.71%
+2025-12-01 22:14:22,670 - INFO - Comparison Metrics: RMSE=5.00, MAE=5.00, MAPE=4.16%
+2025-12-01 22:14:22,671 - INFO - Comparison Metrics: RMSE=5.00, MAE=5.00, MAPE=4.16%
+2025-12-01 22:14:22,671 - INFO - Comparison Metrics: RMSE=5.00, MAE=5.00, MAPE=5.33%
+2025-12-01 22:14:22,672 - INFO - Comparison Metrics: RMSE=5.00, MAE=5.00, MAPE=5.33%
+2025-12-01 22:14:22,672 - INFO - Comparison Metrics: RMSE=8.00, MAE=8.00, MAPE=7.96%
+2025-12-01 22:14:22,673 - INFO - Comparison Metrics: RMSE=8.00, MAE=8.00, MAPE=7.96%
+2025-12-01 22:14:22,673 - INFO - Comparison Metrics: RMSE=10.00, MAE=10.00, MAPE=10.89%
+2025-12-01 22:14:22,674 - INFO - Comparison Metrics: RMSE=10.00, MAE=10.00, MAPE=10.89%
+2025-12-01 22:14:22,675 - INFO - Comparison Metrics: RMSE=20.00, MAE=20.00, MAPE=34.16%
+2025-12-01 22:14:22,675 - INFO - Comparison Metrics: RMSE=15.81, MAE=15.00, MAPE=18.30%
+2025-12-01 22:14:22,677 - INFO - 
+================================================================================
+2025-12-01 22:14:22,678 - INFO - DISAGREEMENT ANALYSIS
+2025-12-01 22:14:22,678 - INFO - ================================================================================
+2025-12-01 22:28:13,193 - INFO - 
+====================================================================================================
+2025-12-01 22:28:13,194 - INFO - EXTENDED PARAMETER SENSITIVITY TESTING FOR MADEX METRIC ANALYSIS
+2025-12-01 22:28:13,195 - INFO - ====================================================================================================
+2025-12-01 22:28:13,195 - INFO - Analysis initiated at: 2025-12-01 22:28:13
+2025-12-01 22:28:13,195 - INFO - Analysis type: Extended parameter sensitivity testing for MADEX metric
+2025-12-01 22:28:13,196 - INFO - Clinical context: Glucose prediction model evaluation with 50-point scenarios
+2025-12-01 22:28:13,196 - INFO - 
+ANALYSIS OBJECTIVES:
+2025-12-01 22:28:13,196 - INFO - 1. Validate MADEX robustness across clinical parameter ranges with extended data
+2025-12-01 22:28:13,196 - INFO - 2. Identify optimal parameter combinations for different clinical contexts
+2025-12-01 22:28:13,202 - INFO - 3. Compare MADEX performance against traditional metrics (RMSE, MAE, MAPE)
+2025-12-01 22:28:13,203 - INFO - 4. Analyze disagreement cases where MADEX differs from traditional metrics
+2025-12-01 22:28:13,206 - INFO - 5. Demonstrate MADEX clinical superiority in glucose-context-aware evaluation
+2025-12-01 22:28:13,208 - INFO - 6. Assess impact of larger sample size (50 points) on ranking stability
+2025-12-01 22:28:13,209 - INFO - 
+================================================================================
+2025-12-01 22:28:13,210 - INFO - MADEX SENSITIVITY ANALYSIS INITIATED
+2025-12-01 22:28:13,211 - INFO - ================================================================================
+2025-12-01 22:28:13,212 - INFO - Parameter ranges being tested:
+2025-12-01 22:28:13,213 - INFO - - Parameter 'a' (euglycemic center): [110, 125, 140] mg/dL
+2025-12-01 22:28:13,215 - INFO - - Parameter 'b' (critical range): [40, 55, 70, 80]
+2025-12-01 22:28:13,216 - INFO - - Parameter 'c' (slope modifier): [20, 30, 40, 50, 60, 80]
+2025-12-01 22:28:13,217 - INFO - Total parameter combinations to test: 72
+2025-12-01 22:28:13,218 - INFO - 
+--------------------------------------------------
+2025-12-01 22:28:13,218 - INFO - ESTABLISHING BASELINE RANKINGS
+2025-12-01 22:28:13,221 - INFO - --------------------------------------------------
+2025-12-01 22:28:13,271 - INFO - 
+================================================================================
+2025-12-01 22:28:13,271 - INFO - PARAMETER EFFECT ANALYSIS
+2025-12-01 22:28:13,271 - INFO - ================================================================================
+2025-12-01 22:28:13,288 - INFO - 
+================================================================================
+2025-12-01 22:28:13,290 - INFO - MADEX VS TRADITIONAL METRICS COMPARISON
+2025-12-01 22:28:13,294 - INFO - ================================================================================
+2025-12-01 22:28:13,295 - INFO - Comparison Metrics: RMSE=18.96, MAE=18.88, MAPE=36.17%
+2025-12-01 22:28:13,296 - INFO - Comparison Metrics: RMSE=10.00, MAE=10.00, MAPE=19.08%
+2025-12-01 22:28:13,311 - INFO - Comparison Metrics: RMSE=30.00, MAE=30.00, MAPE=10.27%
+2025-12-01 22:28:13,311 - INFO - Comparison Metrics: RMSE=40.00, MAE=40.00, MAPE=13.70%
+2025-12-01 22:28:13,312 - INFO - Comparison Metrics: RMSE=10.00, MAE=10.00, MAPE=6.71%
+2025-12-01 22:28:13,312 - INFO - Comparison Metrics: RMSE=10.00, MAE=10.00, MAPE=6.71%
+2025-12-01 22:28:13,313 - INFO - Comparison Metrics: RMSE=5.00, MAE=5.00, MAPE=4.16%
+2025-12-01 22:28:13,313 - INFO - Comparison Metrics: RMSE=5.00, MAE=5.00, MAPE=4.16%
+2025-12-01 22:28:13,314 - INFO - Comparison Metrics: RMSE=5.00, MAE=5.00, MAPE=5.33%
+2025-12-01 22:28:13,314 - INFO - Comparison Metrics: RMSE=5.00, MAE=5.00, MAPE=5.33%
+2025-12-01 22:28:13,315 - INFO - Comparison Metrics: RMSE=8.00, MAE=8.00, MAPE=7.96%
+2025-12-01 22:28:13,315 - INFO - Comparison Metrics: RMSE=8.00, MAE=8.00, MAPE=7.96%
+2025-12-01 22:28:13,316 - INFO - Comparison Metrics: RMSE=10.00, MAE=10.00, MAPE=10.89%
+2025-12-01 22:28:13,318 - INFO - Comparison Metrics: RMSE=10.00, MAE=10.00, MAPE=10.89%
+2025-12-01 22:28:13,319 - INFO - Comparison Metrics: RMSE=20.00, MAE=20.00, MAPE=34.16%
+2025-12-01 22:28:13,321 - INFO - Comparison Metrics: RMSE=15.81, MAE=15.00, MAPE=18.30%
+2025-12-01 22:28:13,323 - INFO - 
+================================================================================
+2025-12-01 22:28:13,324 - INFO - DISAGREEMENT ANALYSIS
+2025-12-01 22:28:13,324 - INFO - ================================================================================
+2025-12-01 22:29:19,248 - INFO - 
+====================================================================================================
+2025-12-01 22:29:19,249 - INFO - EXTENDED PARAMETER SENSITIVITY TESTING FOR MADEX METRIC ANALYSIS
+2025-12-01 22:29:19,249 - INFO - ====================================================================================================
+2025-12-01 22:29:19,249 - INFO - Analysis initiated at: 2025-12-01 22:29:19
+2025-12-01 22:29:19,249 - INFO - Analysis type: Extended parameter sensitivity testing for MADEX metric
+2025-12-01 22:29:19,250 - INFO - Clinical context: Glucose prediction model evaluation with 50-point scenarios
+2025-12-01 22:29:19,250 - INFO - 
+ANALYSIS OBJECTIVES:
+2025-12-01 22:29:19,250 - INFO - 1. Validate MADEX robustness across clinical parameter ranges with extended data
+2025-12-01 22:29:19,250 - INFO - 2. Identify optimal parameter combinations for different clinical contexts
+2025-12-01 22:29:19,250 - INFO - 3. Compare MADEX performance against traditional metrics (RMSE, MAE, MAPE)
+2025-12-01 22:29:19,250 - INFO - 4. Analyze disagreement cases where MADEX differs from traditional metrics
+2025-12-01 22:29:19,250 - INFO - 5. Demonstrate MADEX clinical superiority in glucose-context-aware evaluation
+2025-12-01 22:29:19,250 - INFO - 6. Assess impact of larger sample size (50 points) on ranking stability
+2025-12-01 22:29:19,250 - INFO - 
+================================================================================
+2025-12-01 22:29:19,251 - INFO - MADEX SENSITIVITY ANALYSIS INITIATED
+2025-12-01 22:29:19,251 - INFO - ================================================================================
+2025-12-01 22:29:19,251 - INFO - Parameter ranges being tested:
+2025-12-01 22:29:19,251 - INFO - - Parameter 'a' (euglycemic center): [110, 125, 140] mg/dL
+2025-12-01 22:29:19,251 - INFO - - Parameter 'b' (critical range): [40, 55, 70, 80]
+2025-12-01 22:29:19,251 - INFO - - Parameter 'c' (slope modifier): [20, 30, 40, 50, 60, 80]
+2025-12-01 22:29:19,251 - INFO - Total parameter combinations to test: 72
+2025-12-01 22:29:19,251 - INFO - 
+--------------------------------------------------
+2025-12-01 22:29:19,251 - INFO - ESTABLISHING BASELINE RANKINGS
+2025-12-01 22:29:19,252 - INFO - --------------------------------------------------
+2025-12-01 22:29:19,286 - INFO - 
+================================================================================
+2025-12-01 22:29:19,286 - INFO - PARAMETER EFFECT ANALYSIS
+2025-12-01 22:29:19,286 - INFO - ================================================================================
+2025-12-01 22:29:19,294 - INFO - 
+================================================================================
+2025-12-01 22:29:19,294 - INFO - MADEX VS TRADITIONAL METRICS COMPARISON
+2025-12-01 22:29:19,294 - INFO - ================================================================================
+2025-12-01 22:29:19,294 - INFO - Comparison Metrics: RMSE=18.96, MAE=18.88, MAPE=36.17%
+2025-12-01 22:29:19,294 - INFO - Comparison Metrics: RMSE=10.00, MAE=10.00, MAPE=19.08%
+2025-12-01 22:29:19,295 - INFO - Comparison Metrics: RMSE=30.00, MAE=30.00, MAPE=10.27%
+2025-12-01 22:29:19,295 - INFO - Comparison Metrics: RMSE=40.00, MAE=40.00, MAPE=13.70%
+2025-12-01 22:29:19,295 - INFO - Comparison Metrics: RMSE=10.00, MAE=10.00, MAPE=6.71%
+2025-12-01 22:29:19,295 - INFO - Comparison Metrics: RMSE=10.00, MAE=10.00, MAPE=6.71%
+2025-12-01 22:29:19,296 - INFO - Comparison Metrics: RMSE=5.00, MAE=5.00, MAPE=4.16%
+2025-12-01 22:29:19,296 - INFO - Comparison Metrics: RMSE=5.00, MAE=5.00, MAPE=4.16%
+2025-12-01 22:29:19,296 - INFO - Comparison Metrics: RMSE=5.00, MAE=5.00, MAPE=5.33%
+2025-12-01 22:29:19,296 - INFO - Comparison Metrics: RMSE=5.00, MAE=5.00, MAPE=5.33%
+2025-12-01 22:29:19,296 - INFO - Comparison Metrics: RMSE=8.00, MAE=8.00, MAPE=7.96%
+2025-12-01 22:29:19,296 - INFO - Comparison Metrics: RMSE=8.00, MAE=8.00, MAPE=7.96%
+2025-12-01 22:29:19,297 - INFO - Comparison Metrics: RMSE=10.00, MAE=10.00, MAPE=10.89%
+2025-12-01 22:29:19,297 - INFO - Comparison Metrics: RMSE=10.00, MAE=10.00, MAPE=10.89%
+2025-12-01 22:29:19,297 - INFO - Comparison Metrics: RMSE=20.00, MAE=20.00, MAPE=34.16%
+2025-12-01 22:29:19,297 - INFO - Comparison Metrics: RMSE=15.81, MAE=15.00, MAPE=18.30%
+2025-12-01 22:29:19,300 - INFO - 
+================================================================================
+2025-12-01 22:29:19,300 - INFO - DISAGREEMENT ANALYSIS
+2025-12-01 22:29:19,300 - INFO - ================================================================================
+2025-12-01 22:29:58,280 - INFO - 
+====================================================================================================
+2025-12-01 22:29:58,281 - INFO - EXTENDED PARAMETER SENSITIVITY TESTING FOR MADEX METRIC ANALYSIS
+2025-12-01 22:29:58,281 - INFO - ====================================================================================================
+2025-12-01 22:29:58,281 - INFO - Analysis initiated at: 2025-12-01 22:29:58
+2025-12-01 22:29:58,281 - INFO - Analysis type: Extended parameter sensitivity testing for MADEX metric
+2025-12-01 22:29:58,281 - INFO - Clinical context: Glucose prediction model evaluation with 50-point scenarios
+2025-12-01 22:29:58,281 - INFO - 
+ANALYSIS OBJECTIVES:
+2025-12-01 22:29:58,281 - INFO - 1. Validate MADEX robustness across clinical parameter ranges with extended data
+2025-12-01 22:29:58,282 - INFO - 2. Identify optimal parameter combinations for different clinical contexts
+2025-12-01 22:29:58,282 - INFO - 3. Compare MADEX performance against traditional metrics (RMSE, MAE, MAPE)
+2025-12-01 22:29:58,282 - INFO - 4. Analyze disagreement cases where MADEX differs from traditional metrics
+2025-12-01 22:29:58,282 - INFO - 5. Demonstrate MADEX clinical superiority in glucose-context-aware evaluation
+2025-12-01 22:29:58,282 - INFO - 6. Assess impact of larger sample size (50 points) on ranking stability
+2025-12-01 22:29:58,282 - INFO - 
+================================================================================
+2025-12-01 22:29:58,282 - INFO - MADEX SENSITIVITY ANALYSIS INITIATED
+2025-12-01 22:29:58,282 - INFO - ================================================================================
+2025-12-01 22:29:58,282 - INFO - Parameter ranges being tested:
+2025-12-01 22:29:58,282 - INFO - - Parameter 'a' (euglycemic center): [110, 125, 140] mg/dL
+2025-12-01 22:29:58,282 - INFO - - Parameter 'b' (critical range): [40, 55, 70, 80]
+2025-12-01 22:29:58,282 - INFO - - Parameter 'c' (slope modifier): [20, 30, 40, 50, 60, 80]
+2025-12-01 22:29:58,282 - INFO - Total parameter combinations to test: 72
+2025-12-01 22:29:58,282 - INFO - 
+--------------------------------------------------
+2025-12-01 22:29:58,282 - INFO - ESTABLISHING BASELINE RANKINGS
+2025-12-01 22:29:58,283 - INFO - --------------------------------------------------
+2025-12-01 22:29:58,317 - INFO - 
+================================================================================
+2025-12-01 22:29:58,317 - INFO - PARAMETER EFFECT ANALYSIS
+2025-12-01 22:29:58,317 - INFO - ================================================================================
+2025-12-01 22:29:58,327 - INFO - 
+================================================================================
+2025-12-01 22:29:58,327 - INFO - MADEX VS TRADITIONAL METRICS COMPARISON
+2025-12-01 22:29:58,327 - INFO - ================================================================================
+2025-12-01 22:29:58,327 - INFO - Comparison Metrics: RMSE=18.96, MAE=18.88, MAPE=36.17%
+2025-12-01 22:29:58,328 - INFO - Comparison Metrics: RMSE=10.00, MAE=10.00, MAPE=19.08%
+2025-12-01 22:29:58,328 - INFO - Comparison Metrics: RMSE=30.00, MAE=30.00, MAPE=10.27%
+2025-12-01 22:29:58,328 - INFO - Comparison Metrics: RMSE=40.00, MAE=40.00, MAPE=13.70%
+2025-12-01 22:29:58,328 - INFO - Comparison Metrics: RMSE=10.00, MAE=10.00, MAPE=6.71%
+2025-12-01 22:29:58,328 - INFO - Comparison Metrics: RMSE=10.00, MAE=10.00, MAPE=6.71%
+2025-12-01 22:29:58,328 - INFO - Comparison Metrics: RMSE=5.00, MAE=5.00, MAPE=4.16%
+2025-12-01 22:29:58,329 - INFO - Comparison Metrics: RMSE=5.00, MAE=5.00, MAPE=4.16%
+2025-12-01 22:29:58,329 - INFO - Comparison Metrics: RMSE=5.00, MAE=5.00, MAPE=5.33%
+2025-12-01 22:29:58,329 - INFO - Comparison Metrics: RMSE=5.00, MAE=5.00, MAPE=5.33%
+2025-12-01 22:29:58,329 - INFO - Comparison Metrics: RMSE=8.00, MAE=8.00, MAPE=7.96%
+2025-12-01 22:29:58,329 - INFO - Comparison Metrics: RMSE=8.00, MAE=8.00, MAPE=7.96%
+2025-12-01 22:29:58,329 - INFO - Comparison Metrics: RMSE=10.00, MAE=10.00, MAPE=10.89%
+2025-12-01 22:29:58,330 - INFO - Comparison Metrics: RMSE=10.00, MAE=10.00, MAPE=10.89%
+2025-12-01 22:29:58,330 - INFO - Comparison Metrics: RMSE=20.00, MAE=20.00, MAPE=34.16%
+2025-12-01 22:29:58,330 - INFO - Comparison Metrics: RMSE=15.81, MAE=15.00, MAPE=18.30%
+2025-12-01 22:29:58,331 - INFO - 
+================================================================================
+2025-12-01 22:29:58,331 - INFO - DISAGREEMENT ANALYSIS
+2025-12-01 22:29:58,331 - INFO - ================================================================================
+2025-12-01 22:31:50,603 - INFO - 
+====================================================================================================
+2025-12-01 22:31:50,604 - INFO - EXTENDED PARAMETER SENSITIVITY TESTING FOR MADEX METRIC ANALYSIS
+2025-12-01 22:31:50,604 - INFO - ====================================================================================================
+2025-12-01 22:31:50,604 - INFO - Analysis initiated at: 2025-12-01 22:31:50
+2025-12-01 22:31:50,604 - INFO - Analysis type: Extended parameter sensitivity testing for MADEX metric
+2025-12-01 22:31:50,604 - INFO - Clinical context: Glucose prediction model evaluation with 50-point scenarios
+2025-12-01 22:31:50,604 - INFO - 
+ANALYSIS OBJECTIVES:
+2025-12-01 22:31:50,604 - INFO - 1. Validate MADEX robustness across clinical parameter ranges with extended data
+2025-12-01 22:31:50,604 - INFO - 2. Identify optimal parameter combinations for different clinical contexts
+2025-12-01 22:31:50,604 - INFO - 3. Compare MADEX performance against traditional metrics (RMSE, MAE, MAPE)
+2025-12-01 22:31:50,605 - INFO - 4. Analyze disagreement cases where MADEX differs from traditional metrics
+2025-12-01 22:31:50,605 - INFO - 5. Demonstrate MADEX clinical superiority in glucose-context-aware evaluation
+2025-12-01 22:31:50,605 - INFO - 6. Assess impact of larger sample size (50 points) on ranking stability
+2025-12-01 22:31:50,605 - INFO - 
+================================================================================
+2025-12-01 22:31:50,605 - INFO - MADEX SENSITIVITY ANALYSIS INITIATED
+2025-12-01 22:31:50,605 - INFO - ================================================================================
+2025-12-01 22:31:50,605 - INFO - Parameter ranges being tested:
+2025-12-01 22:31:50,605 - INFO - - Parameter 'a' (euglycemic center): [110, 125, 140] mg/dL
+2025-12-01 22:31:50,605 - INFO - - Parameter 'b' (critical range): [40, 55, 70, 80]
+2025-12-01 22:31:50,605 - INFO - - Parameter 'c' (slope modifier): [20, 30, 40, 50, 60, 80]
+2025-12-01 22:31:50,605 - INFO - Total parameter combinations to test: 72
+2025-12-01 22:31:50,606 - INFO - 
+--------------------------------------------------
+2025-12-01 22:31:50,606 - INFO - ESTABLISHING BASELINE RANKINGS
+2025-12-01 22:31:50,606 - INFO - --------------------------------------------------
+2025-12-01 22:31:50,638 - INFO - 
+================================================================================
+2025-12-01 22:31:50,638 - INFO - PARAMETER EFFECT ANALYSIS
+2025-12-01 22:31:50,639 - INFO - ================================================================================
+2025-12-01 22:31:50,647 - INFO - 
+================================================================================
+2025-12-01 22:31:50,647 - INFO - MADEX VS TRADITIONAL METRICS COMPARISON
+2025-12-01 22:31:50,647 - INFO - ================================================================================
+2025-12-01 22:31:50,647 - INFO - Comparison Metrics: RMSE=18.96, MAE=18.88, MAPE=36.17%
+2025-12-01 22:31:50,647 - INFO - Comparison Metrics: RMSE=10.00, MAE=10.00, MAPE=19.08%
+2025-12-01 22:31:50,648 - INFO - Comparison Metrics: RMSE=30.00, MAE=30.00, MAPE=10.27%
+2025-12-01 22:31:50,648 - INFO - Comparison Metrics: RMSE=40.00, MAE=40.00, MAPE=13.70%
+2025-12-01 22:31:50,648 - INFO - Comparison Metrics: RMSE=10.00, MAE=10.00, MAPE=6.71%
+2025-12-01 22:31:50,648 - INFO - Comparison Metrics: RMSE=10.00, MAE=10.00, MAPE=6.71%
+2025-12-01 22:31:50,648 - INFO - Comparison Metrics: RMSE=5.00, MAE=5.00, MAPE=4.16%
+2025-12-01 22:31:50,649 - INFO - Comparison Metrics: RMSE=5.00, MAE=5.00, MAPE=4.16%
+2025-12-01 22:31:50,649 - INFO - Comparison Metrics: RMSE=5.00, MAE=5.00, MAPE=5.33%
+2025-12-01 22:31:50,649 - INFO - Comparison Metrics: RMSE=5.00, MAE=5.00, MAPE=5.33%
+2025-12-01 22:31:50,649 - INFO - Comparison Metrics: RMSE=8.00, MAE=8.00, MAPE=7.96%
+2025-12-01 22:31:50,649 - INFO - Comparison Metrics: RMSE=8.00, MAE=8.00, MAPE=7.96%
+2025-12-01 22:31:50,649 - INFO - Comparison Metrics: RMSE=10.00, MAE=10.00, MAPE=10.89%
+2025-12-01 22:31:50,650 - INFO - Comparison Metrics: RMSE=10.00, MAE=10.00, MAPE=10.89%
+2025-12-01 22:31:50,650 - INFO - Comparison Metrics: RMSE=20.00, MAE=20.00, MAPE=34.16%
+2025-12-01 22:31:50,650 - INFO - Comparison Metrics: RMSE=15.81, MAE=15.00, MAPE=18.30%
+2025-12-01 22:31:50,652 - INFO - 
+================================================================================
+2025-12-01 22:31:50,652 - INFO - DISAGREEMENT ANALYSIS
+2025-12-01 22:31:50,652 - INFO - ================================================================================
+2025-12-01 22:32:15,534 - INFO - 
+====================================================================================================
+2025-12-01 22:32:15,535 - INFO - EXTENDED PARAMETER SENSITIVITY TESTING FOR MADEX METRIC ANALYSIS
+2025-12-01 22:32:15,535 - INFO - ====================================================================================================
+2025-12-01 22:32:15,535 - INFO - Analysis initiated at: 2025-12-01 22:32:15
+2025-12-01 22:32:15,535 - INFO - Analysis type: Extended parameter sensitivity testing for MADEX metric
+2025-12-01 22:32:15,535 - INFO - Clinical context: Glucose prediction model evaluation with 50-point scenarios
+2025-12-01 22:32:15,535 - INFO - 
+ANALYSIS OBJECTIVES:
+2025-12-01 22:32:15,535 - INFO - 1. Validate MADEX robustness across clinical parameter ranges with extended data
+2025-12-01 22:32:15,535 - INFO - 2. Identify optimal parameter combinations for different clinical contexts
+2025-12-01 22:32:15,535 - INFO - 3. Compare MADEX performance against traditional metrics (RMSE, MAE, MAPE)
+2025-12-01 22:32:15,535 - INFO - 4. Analyze disagreement cases where MADEX differs from traditional metrics
+2025-12-01 22:32:15,535 - INFO - 5. Demonstrate MADEX clinical superiority in glucose-context-aware evaluation
+2025-12-01 22:32:15,536 - INFO - 6. Assess impact of larger sample size (50 points) on ranking stability
+2025-12-01 22:32:15,536 - INFO - 
+================================================================================
+2025-12-01 22:32:15,536 - INFO - MADEX SENSITIVITY ANALYSIS INITIATED
+2025-12-01 22:32:15,536 - INFO - ================================================================================
+2025-12-01 22:32:15,536 - INFO - Parameter ranges being tested:
+2025-12-01 22:32:15,536 - INFO - - Parameter 'a' (euglycemic center): [110, 125, 140] mg/dL
+2025-12-01 22:32:15,536 - INFO - - Parameter 'b' (critical range): [40, 55, 70, 80]
+2025-12-01 22:32:15,536 - INFO - - Parameter 'c' (slope modifier): [20, 30, 40, 50, 60, 80]
+2025-12-01 22:32:15,536 - INFO - Total parameter combinations to test: 72
+2025-12-01 22:32:15,536 - INFO - 
+--------------------------------------------------
+2025-12-01 22:32:15,536 - INFO - ESTABLISHING BASELINE RANKINGS
+2025-12-01 22:32:15,537 - INFO - --------------------------------------------------
+2025-12-01 22:32:15,573 - INFO - 
+================================================================================
+2025-12-01 22:32:15,573 - INFO - PARAMETER EFFECT ANALYSIS
+2025-12-01 22:32:15,573 - INFO - ================================================================================
+2025-12-01 22:32:15,584 - INFO - 
+================================================================================
+2025-12-01 22:32:15,584 - INFO - MADEX VS TRADITIONAL METRICS COMPARISON
+2025-12-01 22:32:15,584 - INFO - ================================================================================
+2025-12-01 22:32:15,584 - INFO - Comparison Metrics: RMSE=18.96, MAE=18.88, MAPE=36.17%
+2025-12-01 22:32:15,585 - INFO - Comparison Metrics: RMSE=10.00, MAE=10.00, MAPE=19.08%
+2025-12-01 22:32:15,585 - INFO - Comparison Metrics: RMSE=30.00, MAE=30.00, MAPE=10.27%
+2025-12-01 22:32:15,585 - INFO - Comparison Metrics: RMSE=40.00, MAE=40.00, MAPE=13.70%
+2025-12-01 22:32:15,585 - INFO - Comparison Metrics: RMSE=10.00, MAE=10.00, MAPE=6.71%
+2025-12-01 22:32:15,585 - INFO - Comparison Metrics: RMSE=10.00, MAE=10.00, MAPE=6.71%
+2025-12-01 22:32:15,586 - INFO - Comparison Metrics: RMSE=5.00, MAE=5.00, MAPE=4.16%
+2025-12-01 22:32:15,586 - INFO - Comparison Metrics: RMSE=5.00, MAE=5.00, MAPE=4.16%
+2025-12-01 22:32:15,586 - INFO - Comparison Metrics: RMSE=5.00, MAE=5.00, MAPE=5.33%
+2025-12-01 22:32:15,586 - INFO - Comparison Metrics: RMSE=5.00, MAE=5.00, MAPE=5.33%
+2025-12-01 22:32:15,586 - INFO - Comparison Metrics: RMSE=8.00, MAE=8.00, MAPE=7.96%
+2025-12-01 22:32:15,587 - INFO - Comparison Metrics: RMSE=8.00, MAE=8.00, MAPE=7.96%
+2025-12-01 22:32:15,587 - INFO - Comparison Metrics: RMSE=10.00, MAE=10.00, MAPE=10.89%
+2025-12-01 22:32:15,587 - INFO - Comparison Metrics: RMSE=10.00, MAE=10.00, MAPE=10.89%
+2025-12-01 22:32:15,587 - INFO - Comparison Metrics: RMSE=20.00, MAE=20.00, MAPE=34.16%
+2025-12-01 22:32:15,587 - INFO - Comparison Metrics: RMSE=15.81, MAE=15.00, MAPE=18.30%
+2025-12-01 22:32:15,588 - INFO - 
+================================================================================
+2025-12-01 22:32:15,589 - INFO - DISAGREEMENT ANALYSIS
+2025-12-01 22:32:15,589 - INFO - ================================================================================
+2025-12-01 22:33:42,891 - INFO - 
+====================================================================================================
+2025-12-01 22:33:42,891 - INFO - EXTENDED PARAMETER SENSITIVITY TESTING FOR MADEX METRIC ANALYSIS
+2025-12-01 22:33:42,891 - INFO - ====================================================================================================
+2025-12-01 22:33:42,891 - INFO - Analysis initiated at: 2025-12-01 22:33:42
+2025-12-01 22:33:42,892 - INFO - Analysis type: Extended parameter sensitivity testing for MADEX metric
+2025-12-01 22:33:42,892 - INFO - Clinical context: Glucose prediction model evaluation with 50-point scenarios
+2025-12-01 22:33:42,892 - INFO - 
+ANALYSIS OBJECTIVES:
+2025-12-01 22:33:42,892 - INFO - 1. Validate MADEX robustness across clinical parameter ranges with extended data
+2025-12-01 22:33:42,892 - INFO - 2. Identify optimal parameter combinations for different clinical contexts
+2025-12-01 22:33:42,892 - INFO - 3. Compare MADEX performance against traditional metrics (RMSE, MAE, MAPE)
+2025-12-01 22:33:42,892 - INFO - 4. Analyze disagreement cases where MADEX differs from traditional metrics
+2025-12-01 22:33:42,892 - INFO - 5. Demonstrate MADEX clinical superiority in glucose-context-aware evaluation
+2025-12-01 22:33:42,892 - INFO - 6. Assess impact of larger sample size (50 points) on ranking stability
+2025-12-01 22:33:42,893 - INFO - 
+================================================================================
+2025-12-01 22:33:42,893 - INFO - MADEX SENSITIVITY ANALYSIS INITIATED
+2025-12-01 22:33:42,893 - INFO - ================================================================================
+2025-12-01 22:33:42,893 - INFO - Parameter ranges being tested:
+2025-12-01 22:33:42,893 - INFO - - Parameter 'a' (euglycemic center): [110, 125, 140] mg/dL
+2025-12-01 22:33:42,893 - INFO - - Parameter 'b' (critical range): [40, 55, 70, 80]
+2025-12-01 22:33:42,893 - INFO - - Parameter 'c' (slope modifier): [20, 30, 40, 50, 60, 80]
+2025-12-01 22:33:42,893 - INFO - Total parameter combinations to test: 72
+2025-12-01 22:33:42,893 - INFO - 
+--------------------------------------------------
+2025-12-01 22:33:42,893 - INFO - ESTABLISHING BASELINE RANKINGS
+2025-12-01 22:33:42,893 - INFO - --------------------------------------------------
+2025-12-01 22:33:42,930 - INFO - 
+================================================================================
+2025-12-01 22:33:42,930 - INFO - PARAMETER EFFECT ANALYSIS
+2025-12-01 22:33:42,931 - INFO - ================================================================================
+2025-12-01 22:33:42,939 - INFO - 
+================================================================================
+2025-12-01 22:33:42,939 - INFO - MADEX VS TRADITIONAL METRICS COMPARISON
+2025-12-01 22:33:42,939 - INFO - ================================================================================
+2025-12-01 22:33:42,940 - INFO - Comparison Metrics: RMSE=11.17, MAE=10.50, MAPE=22.65%
+2025-12-01 22:33:42,940 - INFO - Comparison Metrics: RMSE=11.17, MAE=10.50, MAPE=22.65%
+2025-12-01 22:33:42,940 - INFO - Comparison Metrics: RMSE=17.51, MAE=16.44, MAPE=6.89%
+2025-12-01 22:33:42,940 - INFO - Comparison Metrics: RMSE=17.51, MAE=16.44, MAPE=6.89%
+2025-12-01 22:33:42,940 - INFO - Comparison Metrics: RMSE=9.78, MAE=9.28, MAPE=5.88%
+2025-12-01 22:33:42,941 - INFO - Comparison Metrics: RMSE=9.78, MAE=9.28, MAPE=5.88%
+2025-12-01 22:33:42,941 - INFO - Comparison Metrics: RMSE=7.50, MAE=7.36, MAPE=6.05%
+2025-12-01 22:33:42,941 - INFO - Comparison Metrics: RMSE=7.50, MAE=7.36, MAPE=6.05%
+2025-12-01 22:33:42,941 - INFO - Comparison Metrics: RMSE=11.47, MAE=10.92, MAPE=12.84%
+2025-12-01 22:33:42,941 - INFO - Comparison Metrics: RMSE=11.47, MAE=10.92, MAPE=12.84%
+2025-12-01 22:33:42,942 - INFO - Comparison Metrics: RMSE=6.94, MAE=6.87, MAPE=6.30%
+2025-12-01 22:33:42,942 - INFO - Comparison Metrics: RMSE=6.94, MAE=6.87, MAPE=6.30%
+2025-12-01 22:33:42,942 - INFO - Comparison Metrics: RMSE=16.56, MAE=15.91, MAPE=16.28%
+2025-12-01 22:33:42,942 - INFO - Comparison Metrics: RMSE=16.56, MAE=15.91, MAPE=16.28%
+2025-12-01 22:33:42,943 - INFO - Comparison Metrics: RMSE=23.06, MAE=20.18, MAPE=17.36%
+2025-12-01 22:33:42,943 - INFO - Comparison Metrics: RMSE=23.06, MAE=20.18, MAPE=17.36%
+2025-12-01 22:33:42,944 - INFO - 
+================================================================================
+2025-12-01 22:33:42,944 - INFO - DISAGREEMENT ANALYSIS
+2025-12-01 22:33:42,944 - INFO - ================================================================================
