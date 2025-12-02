@@ -20,7 +20,7 @@ from new_metric.common import get_standard_madex_params
 from new_metric.common.clinical_data_extended import get_extended_clinical_scenarios
 from new_metric.madex import graph_vs_mse, mean_adjusted_exponent_error
 
-# Get standard MADEX parameters (a=125, b=55, c=40) to match other analysis scripts
+# Get standard MADEX parameters (a=125, b=55, c=100)
 MADEX_PARAMS = get_standard_madex_params()
 
 
@@ -158,7 +158,7 @@ def analyze_model(y_true: list, y_pred: list, name: str, output_folder: str) -> 
     results["MSE"] = round(mse, 2)
     results["RMSE"] = round(np.sqrt(mse), 2)
 
-    # Calculate MADEX metrics using standard parameters (a=125, b=55, c=40)
+    # Calculate MADEX metrics using standard parameters (a=125, b=55, c=100)
     madex = mean_adjusted_exponent_error(
         y_true,
         y_pred,

@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "SlashCommand(/openspec:apply)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

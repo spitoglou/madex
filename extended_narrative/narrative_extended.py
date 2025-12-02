@@ -303,7 +303,7 @@ class ExtendedNarrativeAnalysis(ClinicalAnalysis, StatisticalAnalysis):
                 "Where:",
                 "  a = 125 mg/dL (euglycemic center)",
                 "  b = 55 (critical range parameter)",
-                "  c = 40 (slope modifier)",
+                "  c = 100 (slope modifier)",
                 "```",
                 "",
                 "This means errors at extreme glucose values (hypo or hyper) are penalized more heavily.",

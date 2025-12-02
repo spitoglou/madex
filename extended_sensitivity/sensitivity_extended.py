@@ -160,14 +160,14 @@ class ExtendedSensitivityAnalysis(ClinicalAnalysis, StatisticalAnalysis):
         self.logger.log_section_header("ESTABLISHING BASELINE RANKINGS", level=3)
 
         print(
-            "Calculating baseline rankings with standard parameters (a=125, b=55, c=40)..."
+            "Calculating baseline rankings with standard parameters (a=125, b=55, c=100)..."
         )
 
         self.markdown_output.extend(
             [
                 "## Baseline Rankings",
                 "",
-                "Using standard clinical parameters: a=125 mg/dL, b=55, c=40",
+                "Using standard clinical parameters: a=125 mg/dL, b=55, c=100",
                 "",
                 "| Scenario | MADEX Model A | MADEX Model B | Winner |",
                 "|----------|---------------|---------------|--------|",
@@ -582,7 +582,7 @@ class ExtendedSensitivityAnalysis(ClinicalAnalysis, StatisticalAnalysis):
                 "",
                 "### Recommendations",
                 "",
-                "- Use standard parameters (a=125, b=55, c=40) for general glucose prediction evaluation",
+                "- Use standard parameters (a=125, b=55, c=100) for general glucose prediction evaluation",
                 "- Consider parameter tuning for specific clinical contexts (e.g., tighter control for hypoglycemia-prone patients)",
                 "- MADEX provides clinically superior model ranking compared to traditional metrics",
                 "",
