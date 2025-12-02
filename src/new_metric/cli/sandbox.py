@@ -28,6 +28,100 @@ def ensure_output_folder(folder: Path) -> None:
     folder.mkdir(parents=True, exist_ok=True)
 
 
+def generate_timeseries_plot(
+    scenario_id: str,
+    scenario_name: str,
+    y_true: np.ndarray,
+    pred_a: np.ndarray,
+    pred_b: np.ndarray,
+    output_folder: Path,
+) -> None:
+    """Generate timeseries plot showing reference values and model predictions.
+
+    Args:
+        scenario_id: Scenario identifier (e.g., "A", "B")
+        scenario_name: Human-readable scenario name
+        y_true: Reference glucose values
+        pred_a: Model A predictions
+        pred_b: Model B predictions
+        output_folder: Output directory for saving the plot
+    """
+    fig, ax = plt.subplots(figsize=(14, 6))
+
+    time_points = np.arange(len(y_true))
+
+    # Plot reference values
+    ax.plot(
+        time_points,
+        y_true,
+        color="black",
+        linewidth=2,
+        label="Reference",
+        marker="o",
+        markersize=4,
+    )
+
+    # Plot Model A predictions
+    ax.plot(
+        time_points,
+        pred_a,
+        color="steelblue",
+        linewidth=1.5,
+        label="Model A (Safer)",
+        marker="s",
+        markersize=3,
+        alpha=0.8,
+    )
+
+    # Plot Model B predictions
+    ax.plot(
+        time_points,
+        pred_b,
+        color="coral",
+        linewidth=1.5,
+        label="Model B (Dangerous)",
+        marker="^",
+        markersize=3,
+        alpha=0.8,
+    )
+
+    # Add horizontal lines for euglycemic range
+    ax.axhline(
+        y=70,
+        color="red",
+        linestyle="--",
+        alpha=0.5,
+        label="Hypoglycemia threshold (70)",
+    )
+    ax.axhline(
+        y=180,
+        color="orange",
+        linestyle="--",
+        alpha=0.5,
+        label="Hyperglycemia threshold (180)",
+    )
+
+    # Fill euglycemic range
+    ax.axhspan(70, 180, alpha=0.1, color="green", label="Euglycemic range")
+
+    ax.set_xlabel("Time Point (Index)")
+    ax.set_ylabel("Glucose Concentration (mg/dL)")
+    ax.set_title(f"Scenario {scenario_id}: {scenario_name} - Timeseries Comparison")
+    ax.legend(loc="upper right", fontsize=9)
+    ax.grid(True, alpha=0.3)
+
+    # Set y-axis to show full range with some padding
+    y_min = min(min(y_true), min(pred_a), min(pred_b)) - 10
+    y_max = max(max(y_true), max(pred_a), max(pred_b)) + 10
+    ax.set_ylim(max(0, y_min), y_max)
+
+    plt.tight_layout()
+    fig.savefig(
+        output_folder / f"{scenario_id}_timeseries.png", dpi=150, bbox_inches="tight"
+    )
+    plt.close(fig)
+
+
 def analyze_model(y_true: list, y_pred: list, name: str, output_folder: Path) -> dict:
     """Analyze a single model's predictions and return metrics."""
     results = {}
@@ -232,6 +326,19 @@ def run_sandbox_analysis(output_dir: Optional[Path] = None) -> pd.DataFrame:
             f"{scenario_id} Model B": y_pred_b,
         }
         all_scenario_data.append(pd.DataFrame(scenario_df_data))
+
+        # Generate timeseries plot for this scenario
+        generate_timeseries_plot(
+            scenario_id=scenario_id,
+            scenario_name=scenario.name,
+            y_true=scenario.y_true,
+            pred_a=scenario.model_predictions["Model_A"],
+            pred_b=scenario.model_predictions["Model_B"],
+            output_folder=output_folder,
+        )
+        print(
+            f"  Saved timeseries plot to {output_folder}/{scenario_id}_timeseries.png"
+        )
 
         # Analyze Model A
         model_a_key = f"{scenario_id} - Model A"
