@@ -38,6 +38,10 @@ def generate_timeseries_plot(
 ) -> None:
     """Generate timeseries plot showing reference values and model predictions.
 
+    Prediction markers are only shown when reference glucose is outside the
+    euglycemic range (below 70 or above 180 mg/dL) to focus on clinically
+    critical regions where bias patterns matter most.
+
     Args:
         scenario_id: Scenario identifier (e.g., "A", "B")
         scenario_name: Human-readable scenario name
@@ -50,7 +54,14 @@ def generate_timeseries_plot(
 
     time_points = np.arange(len(y_true))
 
-    # Plot reference values
+    # Identify points outside euglycemic range (where predictions should be shown)
+    outside_euglycemia = (y_true < 70) | (y_true > 180)
+
+    # Create masked arrays for predictions - only show outside euglycemia
+    pred_a_masked = np.where(outside_euglycemia, pred_a, np.nan)
+    pred_b_masked = np.where(outside_euglycemia, pred_b, np.nan)
+
+    # Plot reference values (all points with markers)
     ax.plot(
         time_points,
         y_true,
@@ -61,27 +72,27 @@ def generate_timeseries_plot(
         markersize=4,
     )
 
-    # Plot Model A predictions
+    # Plot Model A predictions - only where reference is outside euglycemia
     ax.plot(
         time_points,
-        pred_a,
+        pred_a_masked,
         color="steelblue",
         linewidth=1.5,
         label="Model A (Safer)",
         marker="s",
-        markersize=3,
+        markersize=4,
         alpha=0.8,
     )
 
-    # Plot Model B predictions
+    # Plot Model B predictions - only where reference is outside euglycemia
     ax.plot(
         time_points,
-        pred_b,
+        pred_b_masked,
         color="coral",
         linewidth=1.5,
         label="Model B (Dangerous)",
         marker="^",
-        markersize=3,
+        markersize=4,
         alpha=0.8,
     )
 

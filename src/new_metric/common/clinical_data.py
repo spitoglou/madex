@@ -435,6 +435,7 @@ def generate_model_predictions(
     error_magnitude: np.ndarray,
     seed: int = 42,
     min_prediction: float = 1.0,
+    variance_range: float = 15.0,
 ) -> Tuple[np.ndarray, np.ndarray]:
     """
     Generate Model A and Model B predictions with opposite bias patterns.
@@ -453,11 +454,15 @@ def generate_model_predictions(
     Error magnitudes are capped to ensure predictions stay within valid ranges
     while maintaining equal errors between models.
 
+    Random variance (±0-15 mg/dL by default) is added to make predictions more
+    realistic, applied symmetrically to maintain equal metrics between models.
+
     Args:
         y_true: Reference glucose values
         error_magnitude: Absolute error magnitude for each point
         seed: Random seed for euglycemic range direction
         min_prediction: Minimum valid prediction value (default 1.0 mg/dL)
+        variance_range: Maximum random variance to add (default 15.0 mg/dL)
 
     Returns:
         Tuple of (model_a_predictions, model_b_predictions)
@@ -468,9 +473,14 @@ def generate_model_predictions(
     model_a = np.zeros(n)
     model_b = np.zeros(n)
 
+    # Generate random variance to add to error magnitude for each point
+    # This modifies the error itself, so both models get the same absolute error
+    variance = np.random.uniform(-variance_range, variance_range, n)
+
     for i in range(n):
         true_val = y_true[i]
-        error = error_magnitude[i]
+        # Add variance to error magnitude (can increase or decrease error)
+        error = max(0, error_magnitude[i] + variance[i])
 
         # Cap error magnitude to ensure predictions stay above minimum
         # This ensures both models have identical absolute errors

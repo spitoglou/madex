@@ -1470,3 +1470,371 @@ ANALYSIS OBJECTIVES:
 ================================================================================
 2025-12-02 10:11:43,093 - INFO - DISAGREEMENT ANALYSIS
 2025-12-02 10:11:43,094 - INFO - ================================================================================
+2025-12-02 10:33:53,173 - INFO - 
+====================================================================================================
+2025-12-02 10:33:53,174 - INFO - EXTENDED CLINICAL NARRATIVE ANALYSIS
+2025-12-02 10:33:53,174 - INFO - ====================================================================================================
+2025-12-02 10:33:53,174 - INFO - Analysis initiated at: 2025-12-02 10:33:53
+2025-12-02 10:33:53,175 - INFO - 
+================================================================================
+2025-12-02 10:33:53,175 - INFO - MODEL BIAS PATTERN ANALYSIS
+2025-12-02 10:33:53,175 - INFO - ================================================================================
+2025-12-02 10:33:53,176 - INFO - 
+================================================================================
+2025-12-02 10:33:53,176 - INFO - CLINICAL IMPLICATIONS ANALYSIS
+2025-12-02 10:33:53,177 - INFO - ================================================================================
+2025-12-02 10:33:53,180 - INFO - 
+================================================================================
+2025-12-02 10:33:53,181 - INFO - MADEX BEHAVIOR ANALYSIS
+2025-12-02 10:33:53,181 - INFO - ================================================================================
+2025-12-02 10:33:53,184 - INFO - 
+================================================================================
+2025-12-02 10:33:53,185 - INFO - CLINICAL RECOMMENDATIONS
+2025-12-02 10:33:53,185 - INFO - ================================================================================
+2025-12-02 10:33:53,191 - INFO - 
+====================================================================================================
+2025-12-02 10:33:53,191 - INFO - EXTENDED MADEX BOOTSTRAP STATISTICAL VALIDATION ANALYSIS
+2025-12-02 10:33:53,192 - INFO - ====================================================================================================
+2025-12-02 10:33:53,193 - INFO - Analysis initiated at: 2025-12-02 10:33:53
+2025-12-02 10:33:53,193 - INFO - Analysis type: Bootstrap confidence interval validation for MADEX metric
+2025-12-02 10:33:53,193 - INFO - Data: Extended scenarios with 50 data points each
+2025-12-02 10:33:53,193 - INFO - 
+================================================================================
+2025-12-02 10:33:53,194 - INFO - CLINICAL SCENARIO ANALYSIS
+2025-12-02 10:33:53,194 - INFO - ================================================================================
+2025-12-02 10:33:53,194 - INFO - 
+A: Hypoglycemia Detection
+2025-12-02 10:33:53,195 - INFO - Description: Hypoglycemic episode with recovery (30-85 mg/dL)
+2025-12-02 10:33:53,195 - INFO - Risk Level: CRITICAL
+2025-12-02 10:33:53,195 - INFO - Clinical Context: Life-threatening hypoglycemia requiring immediate intervention
+2025-12-02 10:33:53,196 - INFO - 
+B: Hyperglycemia Management
+2025-12-02 10:33:53,196 - INFO - Description: Hyperglycemic episode with treatment (150-325 mg/dL)
+2025-12-02 10:33:53,197 - INFO - Risk Level: HIGH
+2025-12-02 10:33:53,197 - INFO - Clinical Context: Severe hyperglycemia requiring aggressive treatment
+2025-12-02 10:33:53,197 - INFO - 
+C: Postprandial Response
+2025-12-02 10:33:53,197 - INFO - Description: Post-meal glucose spike pattern (95-220 mg/dL)
+2025-12-02 10:33:53,198 - INFO - Risk Level: MODERATE
+2025-12-02 10:33:53,198 - INFO - Clinical Context: Post-meal glucose management challenges
+2025-12-02 10:33:53,198 - INFO - 
+D: Dawn Phenomenon
+2025-12-02 10:33:53,198 - INFO - Description: Early morning glucose rise pattern (90-160 mg/dL)
+2025-12-02 10:33:53,198 - INFO - Risk Level: LOW
+2025-12-02 10:33:53,199 - INFO - Clinical Context: Natural circadian glucose elevation
+2025-12-02 10:33:53,199 - INFO - 
+E: Exercise Response
+2025-12-02 10:33:53,199 - INFO - Description: Exercise-induced glucose changes (60-140 mg/dL)
+2025-12-02 10:33:53,199 - INFO - Risk Level: MODERATE
+2025-12-02 10:33:53,199 - INFO - Clinical Context: Exercise-induced hypoglycemia risk
+2025-12-02 10:33:53,200 - INFO - 
+F: Measurement Noise
+2025-12-02 10:33:53,200 - INFO - Description: Stable euglycemic with sensor variations (85-140 mg/dL)
+2025-12-02 10:33:53,200 - INFO - Risk Level: LOW
+2025-12-02 10:33:53,200 - INFO - Clinical Context: Measurement precision in normal glucose range
+2025-12-02 10:33:53,200 - INFO - 
+G: Mixed Clinical
+2025-12-02 10:33:53,201 - INFO - Description: Full glucose range coverage (35-300 mg/dL)
+2025-12-02 10:33:53,201 - INFO - Risk Level: CRITICAL
+2025-12-02 10:33:53,201 - INFO - Clinical Context: Mixed critical events testing robustness
+2025-12-02 10:33:53,201 - INFO - 
+H: Extreme Cases
+2025-12-02 10:33:53,201 - INFO - Description: Life-threatening glucose extremes (20-450 mg/dL)
+2025-12-02 10:33:53,202 - INFO - Risk Level: CRITICAL
+2025-12-02 10:33:53,202 - INFO - Clinical Context: Extreme glucose values requiring emergency care
+2025-12-02 10:33:53,202 - INFO - 
+================================================================================
+2025-12-02 10:33:53,202 - INFO - BOOTSTRAP ANALYSIS EXECUTION
+2025-12-02 10:33:53,203 - INFO - ================================================================================
+2025-12-02 10:33:53,203 - INFO - Bootstrap parameters: n_bootstrap=1000, confidence_interval=95%
+2025-12-02 10:33:53,203 - INFO - Parameter 'a'=125.0 indicates Standard glycemic control target (125.0 mg/dL) - normal management
+2025-12-02 10:33:53,203 - INFO - Parameter 'b'=55.0 indicates Moderate sensitivity to deviations (b=55.0) - balanced error penalties
+2025-12-02 10:33:53,203 - INFO - Parameter 'c'=100.0 indicates Standard error scaling (c=100.0) - balanced error penalties
+2025-12-02 10:33:53,204 - INFO - 
+[1/8] ANALYZING SCENARIO A: Hypoglycemia Detection
+2025-12-02 10:33:53,204 - INFO - Clinical Context: Life-threatening hypoglycemia requiring immediate intervention
+2025-12-02 10:33:53,204 - INFO - Risk Level: CRITICAL
+2025-12-02 10:33:53,204 - INFO - Data points: 50, Glucose range: 30.0-85.0 mg/dL
+2025-12-02 10:33:53,205 - INFO - Computing bootstrap confidence intervals (n=1000)...
+2025-12-02 10:33:53,390 - INFO - Bootstrap analysis: 1000 samples, 95% CI: 247.782-327.336, mean: 288.379
+2025-12-02 10:33:53,532 - INFO - Bootstrap analysis: 1000 samples, 95% CI: 1272.905-2211.280, mean: 1739.543
+2025-12-02 10:33:53,561 - INFO - Bootstrap analysis: 1000 samples, 95% CI: 23.149-28.344, mean: 25.837
+2025-12-02 10:33:53,588 - INFO - Bootstrap analysis: 1000 samples, 95% CI: 23.398-28.161, mean: 25.860
+2025-12-02 10:33:53,614 - INFO - Bootstrap analysis: 1000 samples, 95% CI: 21.196-26.770, mean: 23.969
+2025-12-02 10:33:53,638 - INFO - Bootstrap analysis: 1000 samples, 95% CI: 21.279-26.842, mean: 23.884
+2025-12-02 10:33:53,638 - INFO - Bootstrap results computed:
+2025-12-02 10:33:53,638 - INFO -   MADEX - Model A: 288.38 (247.78-327.34)
+2025-12-02 10:33:53,638 - INFO -   MADEX - Model B: 1739.54 (1272.90-2211.28)
+2025-12-02 10:33:53,639 - INFO - Performing Clarke Error Grid Analysis...
+2025-12-02 10:33:53,808 - INFO - Clarke Error Grid zones: ['A (Accurate): 49', 'B (Acceptable): 1', 'C (Overcorrecting): 0', 'D (Failure to Detect): 0', 'E (Erroneous): 0']
+2025-12-02 10:33:53,808 - INFO - Clinical risk score: 1
+2025-12-02 10:33:53,808 - INFO - Clarke Error Grid zones: ['A (Accurate): 23', 'B (Acceptable): 1', 'C (Overcorrecting): 0', 'D (Failure to Detect): 26', 'E (Erroneous): 0']
+2025-12-02 10:33:53,808 - INFO - Clinical risk score: 131
+2025-12-02 10:33:53,808 - INFO -   [SUCCESS] MADEX confidence intervals do not overlap - significant difference
+2025-12-02 10:33:53,809 - INFO - 
+[2/8] ANALYZING SCENARIO B: Hyperglycemia Management
+2025-12-02 10:33:53,809 - INFO - Clinical Context: Severe hyperglycemia requiring aggressive treatment
+2025-12-02 10:33:53,809 - INFO - Risk Level: HIGH
+2025-12-02 10:33:53,809 - INFO - Data points: 50, Glucose range: 150.0-325.0 mg/dL
+2025-12-02 10:33:53,809 - INFO - Computing bootstrap confidence intervals (n=1000)...
+2025-12-02 10:33:53,975 - INFO - Bootstrap analysis: 1000 samples, 95% CI: 421.986-1036.358, mean: 698.967
+2025-12-02 10:33:54,120 - INFO - Bootstrap analysis: 1000 samples, 95% CI: 39041.340-90762.832, mean: 62098.142
+2025-12-02 10:33:54,151 - INFO - Bootstrap analysis: 1000 samples, 95% CI: 54.678-62.881, mean: 58.656
+2025-12-02 10:33:54,184 - INFO - Bootstrap analysis: 1000 samples, 95% CI: 54.263-62.671, mean: 58.587
+2025-12-02 10:33:54,211 - INFO - Bootstrap analysis: 1000 samples, 95% CI: 53.009-61.241, mean: 57.073
+2025-12-02 10:33:54,239 - INFO - Bootstrap analysis: 1000 samples, 95% CI: 52.803-60.873, mean: 56.860
+2025-12-02 10:33:54,240 - INFO - Bootstrap results computed:
+2025-12-02 10:33:54,240 - INFO -   MADEX - Model A: 698.97 (421.99-1036.36)
+2025-12-02 10:33:54,240 - INFO -   MADEX - Model B: 62098.14 (39041.34-90762.83)
+2025-12-02 10:33:54,240 - INFO - Performing Clarke Error Grid Analysis...
+2025-12-02 10:33:54,308 - INFO - Clarke Error Grid zones: ['A (Accurate): 3', 'B (Acceptable): 47', 'C (Overcorrecting): 0', 'D (Failure to Detect): 0', 'E (Erroneous): 0']
+2025-12-02 10:33:54,308 - INFO - Clinical risk score: 47
+2025-12-02 10:33:54,308 - INFO - Clarke Error Grid zones: ['A (Accurate): 3', 'B (Acceptable): 45', 'C (Overcorrecting): 0', 'D (Failure to Detect): 2', 'E (Erroneous): 0']
+2025-12-02 10:33:54,309 - INFO - Clinical risk score: 55
+2025-12-02 10:33:54,309 - INFO -   [SUCCESS] MADEX confidence intervals do not overlap - significant difference
+2025-12-02 10:33:54,309 - INFO - 
+[3/8] ANALYZING SCENARIO C: Postprandial Response
+2025-12-02 10:33:54,310 - INFO - Clinical Context: Post-meal glucose management challenges
+2025-12-02 10:33:54,310 - INFO - Risk Level: MODERATE
+2025-12-02 10:33:54,310 - INFO - Data points: 50, Glucose range: 95.0-220.0 mg/dL
+2025-12-02 10:33:54,310 - INFO - Computing bootstrap confidence intervals (n=1000)...
+2025-12-02 10:33:54,464 - INFO - Bootstrap analysis: 1000 samples, 95% CI: 766.540-1422.173, mean: 1046.666
+2025-12-02 10:33:54,619 - INFO - Bootstrap analysis: 1000 samples, 95% CI: 3474.616-9832.910, mean: 6577.189
+2025-12-02 10:33:54,652 - INFO - Bootstrap analysis: 1000 samples, 95% CI: 34.539-42.255, mean: 38.334
+2025-12-02 10:33:54,682 - INFO - Bootstrap analysis: 1000 samples, 95% CI: 34.440-41.850, mean: 38.229
+2025-12-02 10:33:54,716 - INFO - Bootstrap analysis: 1000 samples, 95% CI: 32.481-39.663, mean: 35.899
+2025-12-02 10:33:54,745 - INFO - Bootstrap analysis: 1000 samples, 95% CI: 32.366-39.676, mean: 35.900
+2025-12-02 10:33:54,745 - INFO - Bootstrap results computed:
+2025-12-02 10:33:54,745 - INFO -   MADEX - Model A: 1046.67 (766.54-1422.17)
+2025-12-02 10:33:54,746 - INFO -   MADEX - Model B: 6577.19 (3474.62-9832.91)
+2025-12-02 10:33:54,746 - INFO - Performing Clarke Error Grid Analysis...
+2025-12-02 10:33:54,804 - INFO - Clarke Error Grid zones: ['A (Accurate): 16', 'B (Acceptable): 34', 'C (Overcorrecting): 0', 'D (Failure to Detect): 0', 'E (Erroneous): 0']
+2025-12-02 10:33:54,804 - INFO - Clinical risk score: 34
+2025-12-02 10:33:54,805 - INFO - Clarke Error Grid zones: ['A (Accurate): 16', 'B (Acceptable): 34', 'C (Overcorrecting): 0', 'D (Failure to Detect): 0', 'E (Erroneous): 0']
+2025-12-02 10:33:54,805 - INFO - Clinical risk score: 34
+2025-12-02 10:33:54,806 - INFO -   [SUCCESS] MADEX confidence intervals do not overlap - significant difference
+2025-12-02 10:33:54,806 - INFO - 
+[4/8] ANALYZING SCENARIO D: Dawn Phenomenon
+2025-12-02 10:33:54,806 - INFO - Clinical Context: Natural circadian glucose elevation
+2025-12-02 10:33:54,807 - INFO - Risk Level: LOW
+2025-12-02 10:33:54,807 - INFO - Data points: 50, Glucose range: 90.0-160.0 mg/dL
+2025-12-02 10:33:54,807 - INFO - Computing bootstrap confidence intervals (n=1000)...
+2025-12-02 10:33:54,941 - INFO - Bootstrap analysis: 1000 samples, 95% CI: 864.897-1345.077, mean: 1098.389
+2025-12-02 10:33:55,095 - INFO - Bootstrap analysis: 1000 samples, 95% CI: 876.695-1447.407, mean: 1138.582
+2025-12-02 10:33:55,127 - INFO - Bootstrap analysis: 1000 samples, 95% CI: 28.882-33.471, mean: 31.227
+2025-12-02 10:33:55,155 - INFO - Bootstrap analysis: 1000 samples, 95% CI: 28.947-33.329, mean: 31.260
+2025-12-02 10:33:55,185 - INFO - Bootstrap analysis: 1000 samples, 95% CI: 27.170-32.415, mean: 29.899
+2025-12-02 10:33:55,213 - INFO - Bootstrap analysis: 1000 samples, 95% CI: 27.401-32.496, mean: 29.823
+2025-12-02 10:33:55,213 - INFO - Bootstrap results computed:
+2025-12-02 10:33:55,213 - INFO -   MADEX - Model A: 1098.39 (864.90-1345.08)
+2025-12-02 10:33:55,213 - INFO -   MADEX - Model B: 1138.58 (876.70-1447.41)
+2025-12-02 10:33:55,214 - INFO - Performing Clarke Error Grid Analysis...
+2025-12-02 10:33:55,279 - INFO - Clarke Error Grid zones: ['A (Accurate): 13', 'B (Acceptable): 37', 'C (Overcorrecting): 0', 'D (Failure to Detect): 0', 'E (Erroneous): 0']
+2025-12-02 10:33:55,280 - INFO - Clinical risk score: 37
+2025-12-02 10:33:55,280 - INFO - Clarke Error Grid zones: ['A (Accurate): 13', 'B (Acceptable): 37', 'C (Overcorrecting): 0', 'D (Failure to Detect): 0', 'E (Erroneous): 0']
+2025-12-02 10:33:55,280 - INFO - Clinical risk score: 37
+2025-12-02 10:33:55,280 - INFO -   [WARNING] MADEX confidence intervals overlap
+2025-12-02 10:33:55,281 - INFO - 
+[5/8] ANALYZING SCENARIO E: Exercise Response
+2025-12-02 10:33:55,281 - INFO - Clinical Context: Exercise-induced hypoglycemia risk
+2025-12-02 10:33:55,281 - INFO - Risk Level: MODERATE
+2025-12-02 10:33:55,281 - INFO - Data points: 50, Glucose range: 60.0-140.0 mg/dL
+2025-12-02 10:33:55,281 - INFO - Computing bootstrap confidence intervals (n=1000)...
+2025-12-02 10:33:55,425 - INFO - Bootstrap analysis: 1000 samples, 95% CI: 1043.131-1856.506, mean: 1402.681
+2025-12-02 10:33:55,575 - INFO - Bootstrap analysis: 1000 samples, 95% CI: 1907.215-4366.364, mean: 2981.557
+2025-12-02 10:33:55,608 - INFO - Bootstrap analysis: 1000 samples, 95% CI: 35.481-40.391, mean: 37.825
+2025-12-02 10:33:55,636 - INFO - Bootstrap analysis: 1000 samples, 95% CI: 35.226-40.118, mean: 37.721
+2025-12-02 10:33:55,662 - INFO - Bootstrap analysis: 1000 samples, 95% CI: 34.110-39.290, mean: 36.683
+2025-12-02 10:33:55,694 - INFO - Bootstrap analysis: 1000 samples, 95% CI: 34.282-39.162, mean: 36.714
+2025-12-02 10:33:55,695 - INFO - Bootstrap results computed:
+2025-12-02 10:33:55,695 - INFO -   MADEX - Model A: 1402.68 (1043.13-1856.51)
+2025-12-02 10:33:55,695 - INFO -   MADEX - Model B: 2981.56 (1907.22-4366.36)
+2025-12-02 10:33:55,696 - INFO - Performing Clarke Error Grid Analysis...
+2025-12-02 10:33:55,760 - INFO - Clarke Error Grid zones: ['A (Accurate): 12', 'B (Acceptable): 38', 'C (Overcorrecting): 0', 'D (Failure to Detect): 0', 'E (Erroneous): 0']
+2025-12-02 10:33:55,761 - INFO - Clinical risk score: 38
+2025-12-02 10:33:55,761 - INFO - Clarke Error Grid zones: ['A (Accurate): 4', 'B (Acceptable): 38', 'C (Overcorrecting): 0', 'D (Failure to Detect): 8', 'E (Erroneous): 0']
+2025-12-02 10:33:55,761 - INFO - Clinical risk score: 78
+2025-12-02 10:33:55,761 - INFO -   [SUCCESS] MADEX confidence intervals do not overlap - significant difference
+2025-12-02 10:33:55,762 - INFO - 
+[6/8] ANALYZING SCENARIO F: Measurement Noise
+2025-12-02 10:33:55,762 - INFO - Clinical Context: Measurement precision in normal glucose range
+2025-12-02 10:33:55,762 - INFO - Risk Level: LOW
+2025-12-02 10:33:55,762 - INFO - Data points: 50, Glucose range: 90.3-131.5 mg/dL
+2025-12-02 10:33:55,762 - INFO - Computing bootstrap confidence intervals (n=1000)...
+2025-12-02 10:33:55,900 - INFO - Bootstrap analysis: 1000 samples, 95% CI: 1064.099-1652.409, mean: 1327.843
+2025-12-02 10:33:56,051 - INFO - Bootstrap analysis: 1000 samples, 95% CI: 1194.959-1762.765, mean: 1464.222
+2025-12-02 10:33:56,079 - INFO - Bootstrap analysis: 1000 samples, 95% CI: 33.231-37.726, mean: 35.478
+2025-12-02 10:33:56,105 - INFO - Bootstrap analysis: 1000 samples, 95% CI: 33.112-37.428, mean: 35.432
+2025-12-02 10:33:56,137 - INFO - Bootstrap analysis: 1000 samples, 95% CI: 32.252-36.699, mean: 34.483
+2025-12-02 10:33:56,163 - INFO - Bootstrap analysis: 1000 samples, 95% CI: 32.295-36.789, mean: 34.496
+2025-12-02 10:33:56,163 - INFO - Bootstrap results computed:
+2025-12-02 10:33:56,163 - INFO -   MADEX - Model A: 1327.84 (1064.10-1652.41)
+2025-12-02 10:33:56,163 - INFO -   MADEX - Model B: 1464.22 (1194.96-1762.76)
+2025-12-02 10:33:56,164 - INFO - Performing Clarke Error Grid Analysis...
+2025-12-02 10:33:56,219 - INFO - Clarke Error Grid zones: ['A (Accurate): 4', 'B (Acceptable): 46', 'C (Overcorrecting): 0', 'D (Failure to Detect): 0', 'E (Erroneous): 0']
+2025-12-02 10:33:56,219 - INFO - Clinical risk score: 46
+2025-12-02 10:33:56,219 - INFO - Clarke Error Grid zones: ['A (Accurate): 4', 'B (Acceptable): 46', 'C (Overcorrecting): 0', 'D (Failure to Detect): 0', 'E (Erroneous): 0']
+2025-12-02 10:33:56,219 - INFO - Clinical risk score: 46
+2025-12-02 10:33:56,220 - INFO -   [WARNING] MADEX confidence intervals overlap
+2025-12-02 10:33:56,220 - INFO - 
+[7/8] ANALYZING SCENARIO G: Mixed Clinical
+2025-12-02 10:33:56,220 - INFO - Clinical Context: Mixed critical events testing robustness
+2025-12-02 10:33:56,220 - INFO - Risk Level: CRITICAL
+2025-12-02 10:33:56,220 - INFO - Data points: 50, Glucose range: 35.0-300.0 mg/dL
+2025-12-02 10:33:56,220 - INFO - Computing bootstrap confidence intervals (n=1000)...
+2025-12-02 10:33:56,364 - INFO - Bootstrap analysis: 1000 samples, 95% CI: 678.139-2422.197, mean: 1418.068
+2025-12-02 10:33:56,503 - INFO - Bootstrap analysis: 1000 samples, 95% CI: 15021.655-36716.174, mean: 25245.401
+2025-12-02 10:33:56,538 - INFO - Bootstrap analysis: 1000 samples, 95% CI: 45.120-53.462, mean: 49.250
+2025-12-02 10:33:56,571 - INFO - Bootstrap analysis: 1000 samples, 95% CI: 44.873-53.193, mean: 49.138
+2025-12-02 10:33:56,600 - INFO - Bootstrap analysis: 1000 samples, 95% CI: 42.437-50.887, mean: 46.787
+2025-12-02 10:33:56,628 - INFO - Bootstrap analysis: 1000 samples, 95% CI: 42.371-51.010, mean: 46.853
+2025-12-02 10:33:56,628 - INFO - Bootstrap results computed:
+2025-12-02 10:33:56,628 - INFO -   MADEX - Model A: 1418.07 (678.14-2422.20)
+2025-12-02 10:33:56,628 - INFO -   MADEX - Model B: 25245.40 (15021.65-36716.17)
+2025-12-02 10:33:56,628 - INFO - Performing Clarke Error Grid Analysis...
+2025-12-02 10:33:56,702 - INFO - Clarke Error Grid zones: ['A (Accurate): 14', 'B (Acceptable): 36', 'C (Overcorrecting): 0', 'D (Failure to Detect): 0', 'E (Erroneous): 0']
+2025-12-02 10:33:56,702 - INFO - Clinical risk score: 36
+2025-12-02 10:33:56,702 - INFO - Clarke Error Grid zones: ['A (Accurate): 3', 'B (Acceptable): 34', 'C (Overcorrecting): 0', 'D (Failure to Detect): 13', 'E (Erroneous): 0']
+2025-12-02 10:33:56,703 - INFO - Clinical risk score: 99
+2025-12-02 10:33:56,703 - INFO -   [SUCCESS] MADEX confidence intervals do not overlap - significant difference
+2025-12-02 10:33:56,703 - INFO - 
+[8/8] ANALYZING SCENARIO H: Extreme Cases
+2025-12-02 10:33:56,703 - INFO - Clinical Context: Extreme glucose values requiring emergency care
+2025-12-02 10:33:56,704 - INFO - Risk Level: CRITICAL
+2025-12-02 10:33:56,704 - INFO - Data points: 50, Glucose range: 20.0-450.0 mg/dL
+2025-12-02 10:33:56,704 - INFO - Computing bootstrap confidence intervals (n=1000)...
+2025-12-02 10:33:56,853 - INFO - Bootstrap analysis: 1000 samples, 95% CI: 339.828-1466.700, mean: 764.778
+2025-12-02 10:33:57,004 - INFO - Bootstrap analysis: 1000 samples, 95% CI: 157634.141-589349.927, mean: 354954.695
+2025-12-02 10:33:57,032 - INFO - Bootstrap analysis: 1000 samples, 95% CI: 54.420-70.826, mean: 62.748
+2025-12-02 10:33:57,060 - INFO - Bootstrap analysis: 1000 samples, 95% CI: 54.380-71.757, mean: 62.778
+2025-12-02 10:33:57,091 - INFO - Bootstrap analysis: 1000 samples, 95% CI: 48.157-63.984, mean: 55.706
+2025-12-02 10:33:57,122 - INFO - Bootstrap analysis: 1000 samples, 95% CI: 48.227-63.554, mean: 55.505
+2025-12-02 10:33:57,123 - INFO - Bootstrap results computed:
+2025-12-02 10:33:57,123 - INFO -   MADEX - Model A: 764.78 (339.83-1466.70)
+2025-12-02 10:33:57,123 - INFO -   MADEX - Model B: 354954.69 (157634.14-589349.93)
+2025-12-02 10:33:57,123 - INFO - Performing Clarke Error Grid Analysis...
+2025-12-02 10:33:57,277 - INFO - Clarke Error Grid zones: ['A (Accurate): 19', 'B (Acceptable): 31', 'C (Overcorrecting): 0', 'D (Failure to Detect): 0', 'E (Erroneous): 0']
+2025-12-02 10:33:57,277 - INFO - Clinical risk score: 31
+2025-12-02 10:33:57,278 - INFO - Clarke Error Grid zones: ['A (Accurate): 9', 'B (Acceptable): 31', 'C (Overcorrecting): 0', 'D (Failure to Detect): 10', 'E (Erroneous): 0']
+2025-12-02 10:33:57,278 - INFO - Clinical risk score: 81
+2025-12-02 10:33:57,278 - INFO -   [SUCCESS] MADEX confidence intervals do not overlap - significant difference
+2025-12-02 10:33:57,278 - INFO - 
+================================================================================
+2025-12-02 10:33:57,278 - INFO - STATISTICAL SIGNIFICANCE TESTING
+2025-12-02 10:33:57,279 - INFO - ================================================================================
+2025-12-02 10:33:57,280 - INFO - 
+MADEX Statistical Analysis:
+2025-12-02 10:33:57,281 - INFO -   Wilcoxon statistic: 0.00
+2025-12-02 10:33:57,281 - INFO -   P-value: 0.0078
+2025-12-02 10:33:57,281 - INFO -   Cohen's d (effect size): -0.46
+2025-12-02 10:33:57,281 - INFO -   Interpretation: very significant (p < 0.01) - Strong evidence of difference
+2025-12-02 10:33:57,281 - INFO -   Effect size: small effect size
+2025-12-02 10:33:57,281 - INFO -   Preferred model: Model A
+2025-12-02 10:33:57,283 - INFO - 
+RMSE Statistical Analysis:
+2025-12-02 10:33:57,283 - INFO -   Wilcoxon statistic: 6.00
+2025-12-02 10:33:57,284 - INFO -   P-value: 0.1094
+2025-12-02 10:33:57,284 - INFO -   Cohen's d (effect size): 0.68
+2025-12-02 10:33:57,284 - INFO -   Interpretation: not significant (p >= 0.10) - No evidence of difference
+2025-12-02 10:33:57,284 - INFO -   Effect size: medium effect size
+2025-12-02 10:33:57,285 - INFO -   Preferred model: Model B
+2025-12-02 10:33:57,286 - INFO - 
+MAE Statistical Analysis:
+2025-12-02 10:33:57,286 - INFO -   Wilcoxon statistic: 10.00
+2025-12-02 10:33:57,287 - INFO -   P-value: 0.3125
+2025-12-02 10:33:57,287 - INFO -   Cohen's d (effect size): 0.55
+2025-12-02 10:33:57,287 - INFO -   Interpretation: not significant (p >= 0.10) - No evidence of difference
+2025-12-02 10:33:57,287 - INFO -   Effect size: medium effect size
+2025-12-02 10:33:57,287 - INFO -   Preferred model: Model B
+2025-12-02 10:33:57,288 - INFO - 
+================================================================================
+2025-12-02 10:33:57,288 - INFO - CLINICAL DETECTION SENSITIVITY ANALYSIS
+2025-12-02 10:33:57,288 - INFO - ================================================================================
+2025-12-02 10:33:57,289 - INFO - Hypoglycemia detection (<70.0 mg/dL): 41/41 events detected (sensitivity: 1.00)
+2025-12-02 10:33:57,292 - INFO - Hypoglycemia detection (<70.0 mg/dL): 13/41 events detected (sensitivity: 0.32)
+2025-12-02 10:33:57,292 - INFO - Hypoglycemia detection (<70.0 mg/dL): 7/7 events detected (sensitivity: 1.00)
+2025-12-02 10:33:57,292 - INFO - Hypoglycemia detection (<70.0 mg/dL): 0/7 events detected (sensitivity: 0.00)
+2025-12-02 10:33:57,293 - INFO - Hypoglycemia detection (<70.0 mg/dL): 13/13 events detected (sensitivity: 1.00)
+2025-12-02 10:33:57,293 - INFO - Hypoglycemia detection (<70.0 mg/dL): 2/13 events detected (sensitivity: 0.15)
+2025-12-02 10:33:57,293 - INFO - Hypoglycemia detection (<70.0 mg/dL): 18/18 events detected (sensitivity: 1.00)
+2025-12-02 10:33:57,294 - INFO - Hypoglycemia detection (<70.0 mg/dL): 8/18 events detected (sensitivity: 0.44)
+2025-12-02 10:33:57,294 - INFO - Hyperglycemia detection (>180.0 mg/dL): 42/42 events detected (sensitivity: 1.00)
+2025-12-02 10:33:57,294 - INFO - Hyperglycemia detection (>180.0 mg/dL): 20/42 events detected (sensitivity: 0.48)
+2025-12-02 10:33:57,294 - INFO - Hyperglycemia detection (>180.0 mg/dL): 15/15 events detected (sensitivity: 1.00)
+2025-12-02 10:33:57,295 - INFO - Hyperglycemia detection (>180.0 mg/dL): 0/15 events detected (sensitivity: 0.00)
+2025-12-02 10:33:57,295 - INFO - Hyperglycemia detection (>180.0 mg/dL): 18/18 events detected (sensitivity: 1.00)
+2025-12-02 10:33:57,295 - INFO - Hyperglycemia detection (>180.0 mg/dL): 10/18 events detected (sensitivity: 0.56)
+2025-12-02 10:33:57,296 - INFO - Hyperglycemia detection (>180.0 mg/dL): 21/21 events detected (sensitivity: 1.00)
+2025-12-02 10:33:57,296 - INFO - Hyperglycemia detection (>180.0 mg/dL): 20/21 events detected (sensitivity: 0.95)
+2025-12-02 10:33:57,299 - INFO - 
+====================================================================================================
+2025-12-02 10:33:57,300 - INFO - EXTENDED PARAMETER SENSITIVITY TESTING FOR MADEX METRIC ANALYSIS
+2025-12-02 10:33:57,300 - INFO - ====================================================================================================
+2025-12-02 10:33:57,300 - INFO - Analysis initiated at: 2025-12-02 10:33:57
+2025-12-02 10:33:57,300 - INFO - Analysis type: Extended parameter sensitivity testing for MADEX metric
+2025-12-02 10:33:57,300 - INFO - Clinical context: Glucose prediction model evaluation with 50-point scenarios
+2025-12-02 10:33:57,300 - INFO - 
+ANALYSIS OBJECTIVES:
+2025-12-02 10:33:57,301 - INFO - 1. Validate MADEX robustness across clinical parameter ranges with extended data
+2025-12-02 10:33:57,301 - INFO - 2. Identify optimal parameter combinations for different clinical contexts
+2025-12-02 10:33:57,301 - INFO - 3. Compare MADEX performance against traditional metrics (RMSE, MAE, MAPE)
+2025-12-02 10:33:57,301 - INFO - 4. Analyze disagreement cases where MADEX differs from traditional metrics
+2025-12-02 10:33:57,301 - INFO - 5. Demonstrate MADEX clinical superiority in glucose-context-aware evaluation
+2025-12-02 10:33:57,301 - INFO - 6. Assess impact of larger sample size (50 points) on ranking stability
+2025-12-02 10:33:57,302 - INFO - 
+================================================================================
+2025-12-02 10:33:57,302 - INFO - MADEX SENSITIVITY ANALYSIS INITIATED
+2025-12-02 10:33:57,302 - INFO - ================================================================================
+2025-12-02 10:33:57,302 - INFO - Parameter ranges being tested:
+2025-12-02 10:33:57,302 - INFO - - Parameter 'a' (euglycemic center): [110, 125, 140] mg/dL
+2025-12-02 10:33:57,302 - INFO - - Parameter 'b' (critical range): [40, 55, 70, 80]
+2025-12-02 10:33:57,303 - INFO - - Parameter 'c' (slope modifier): [20, 30, 40, 50, 60, 80]
+2025-12-02 10:33:57,303 - INFO - Total parameter combinations to test: 72
+2025-12-02 10:33:57,303 - INFO - 
+--------------------------------------------------
+2025-12-02 10:33:57,303 - INFO - ESTABLISHING BASELINE RANKINGS
+2025-12-02 10:33:57,303 - INFO - --------------------------------------------------
+2025-12-02 10:33:57,468 - INFO - 
+================================================================================
+2025-12-02 10:33:57,468 - INFO - PARAMETER EFFECT ANALYSIS
+2025-12-02 10:33:57,469 - INFO - ================================================================================
+2025-12-02 10:33:57,474 - INFO - 
+================================================================================
+2025-12-02 10:33:57,474 - INFO - MADEX VS TRADITIONAL METRICS COMPARISON
+2025-12-02 10:33:57,474 - INFO - ================================================================================
+2025-12-02 10:33:57,475 - INFO - Comparison Metrics: RMSE=25.85, MAE=23.86, MAPE=49.68%
+2025-12-02 10:33:57,475 - INFO - Comparison Metrics: RMSE=25.85, MAE=23.86, MAPE=49.68%
+2025-12-02 10:33:57,475 - INFO - Comparison Metrics: RMSE=25.85, MAE=23.86, MAPE=49.68%
+2025-12-02 10:33:57,476 - INFO - Comparison Metrics: RMSE=25.85, MAE=23.86, MAPE=49.68%
+2025-12-02 10:33:57,476 - INFO - Comparison Metrics: RMSE=58.75, MAE=56.90, MAPE=24.46%
+2025-12-02 10:33:57,477 - INFO - Comparison Metrics: RMSE=58.75, MAE=56.90, MAPE=24.46%
+2025-12-02 10:33:57,477 - INFO - Comparison Metrics: RMSE=58.75, MAE=56.90, MAPE=24.46%
+2025-12-02 10:33:57,477 - INFO - Comparison Metrics: RMSE=58.75, MAE=56.90, MAPE=24.46%
+2025-12-02 10:33:57,478 - INFO - Comparison Metrics: RMSE=38.40, MAE=35.93, MAPE=22.89%
+2025-12-02 10:33:57,478 - INFO - Comparison Metrics: RMSE=38.40, MAE=35.93, MAPE=22.89%
+2025-12-02 10:33:57,478 - INFO - Comparison Metrics: RMSE=38.40, MAE=35.93, MAPE=22.89%
+2025-12-02 10:33:57,479 - INFO - Comparison Metrics: RMSE=38.40, MAE=35.93, MAPE=22.89%
+2025-12-02 10:33:57,479 - INFO - Comparison Metrics: RMSE=31.27, MAE=29.86, MAPE=24.66%
+2025-12-02 10:33:57,480 - INFO - Comparison Metrics: RMSE=31.27, MAE=29.86, MAPE=24.66%
+2025-12-02 10:33:57,480 - INFO - Comparison Metrics: RMSE=31.27, MAE=29.86, MAPE=24.66%
+2025-12-02 10:33:57,480 - INFO - Comparison Metrics: RMSE=31.27, MAE=29.86, MAPE=24.66%
+2025-12-02 10:33:57,481 - INFO - Comparison Metrics: RMSE=37.80, MAE=36.71, MAPE=40.64%
+2025-12-02 10:33:57,481 - INFO - Comparison Metrics: RMSE=37.80, MAE=36.71, MAPE=40.64%
+2025-12-02 10:33:57,481 - INFO - Comparison Metrics: RMSE=37.80, MAE=36.71, MAPE=40.64%
+2025-12-02 10:33:57,481 - INFO - Comparison Metrics: RMSE=37.80, MAE=36.71, MAPE=40.64%
+2025-12-02 10:33:57,482 - INFO - Comparison Metrics: RMSE=35.44, MAE=34.50, MAPE=31.73%
+2025-12-02 10:33:57,482 - INFO - Comparison Metrics: RMSE=35.44, MAE=34.50, MAPE=31.73%
+2025-12-02 10:33:57,483 - INFO - Comparison Metrics: RMSE=35.44, MAE=34.50, MAPE=31.73%
+2025-12-02 10:33:57,483 - INFO - Comparison Metrics: RMSE=35.44, MAE=34.50, MAPE=31.73%
+2025-12-02 10:33:57,484 - INFO - Comparison Metrics: RMSE=49.27, MAE=46.93, MAPE=43.60%
+2025-12-02 10:33:57,484 - INFO - Comparison Metrics: RMSE=49.27, MAE=46.93, MAPE=43.60%
+2025-12-02 10:33:57,484 - INFO - Comparison Metrics: RMSE=49.27, MAE=46.93, MAPE=43.60%
+2025-12-02 10:33:57,484 - INFO - Comparison Metrics: RMSE=49.27, MAE=46.93, MAPE=43.60%
+2025-12-02 10:33:57,485 - INFO - Comparison Metrics: RMSE=62.93, MAE=55.70, MAPE=49.05%
+2025-12-02 10:33:57,485 - INFO - Comparison Metrics: RMSE=62.93, MAE=55.70, MAPE=49.05%
+2025-12-02 10:33:57,486 - INFO - Comparison Metrics: RMSE=62.93, MAE=55.70, MAPE=49.05%
+2025-12-02 10:33:57,486 - INFO - Comparison Metrics: RMSE=62.93, MAE=55.70, MAPE=49.05%
+2025-12-02 10:33:57,487 - INFO - 
+================================================================================
+2025-12-02 10:33:57,488 - INFO - DISAGREEMENT ANALYSIS
+2025-12-02 10:33:57,488 - INFO - ================================================================================
