@@ -2,7 +2,7 @@
 ====================================================================================================
 EXTENDED PARAMETER SENSITIVITY TESTING FOR MADEX METRIC ANALYSIS
 ====================================================================================================
-Analysis initiated at: 2025-12-02 09:42:55
+Analysis initiated at: 2025-12-02 10:05:01
 Analysis type: Extended parameter sensitivity testing for MADEX metric
 Clinical context: Glucose prediction model evaluation with 50-point scenarios
 
@@ -34,38 +34,38 @@ PARAMETER EFFECT ANALYSIS
 ================================================================================
 MADEX VS TRADITIONAL METRICS COMPARISON
 ================================================================================
-Comparison Metrics: RMSE=11.17, MAE=10.50, MAPE=22.65%
-Comparison Metrics: RMSE=11.17, MAE=10.50, MAPE=22.65%
-Comparison Metrics: RMSE=11.17, MAE=10.50, MAPE=22.65%
-Comparison Metrics: RMSE=11.17, MAE=10.50, MAPE=22.65%
-Comparison Metrics: RMSE=17.51, MAE=16.44, MAPE=6.89%
-Comparison Metrics: RMSE=17.51, MAE=16.44, MAPE=6.89%
-Comparison Metrics: RMSE=17.51, MAE=16.44, MAPE=6.89%
-Comparison Metrics: RMSE=17.51, MAE=16.44, MAPE=6.89%
-Comparison Metrics: RMSE=9.78, MAE=9.28, MAPE=5.88%
-Comparison Metrics: RMSE=9.78, MAE=9.28, MAPE=5.88%
-Comparison Metrics: RMSE=9.78, MAE=9.28, MAPE=5.88%
-Comparison Metrics: RMSE=9.78, MAE=9.28, MAPE=5.88%
-Comparison Metrics: RMSE=7.50, MAE=7.36, MAPE=6.05%
-Comparison Metrics: RMSE=7.50, MAE=7.36, MAPE=6.05%
-Comparison Metrics: RMSE=7.50, MAE=7.36, MAPE=6.05%
-Comparison Metrics: RMSE=7.50, MAE=7.36, MAPE=6.05%
-Comparison Metrics: RMSE=11.47, MAE=10.92, MAPE=12.84%
-Comparison Metrics: RMSE=11.47, MAE=10.92, MAPE=12.84%
-Comparison Metrics: RMSE=11.47, MAE=10.92, MAPE=12.84%
-Comparison Metrics: RMSE=11.47, MAE=10.92, MAPE=12.84%
-Comparison Metrics: RMSE=6.94, MAE=6.87, MAPE=6.30%
-Comparison Metrics: RMSE=6.94, MAE=6.87, MAPE=6.30%
-Comparison Metrics: RMSE=6.94, MAE=6.87, MAPE=6.30%
-Comparison Metrics: RMSE=6.94, MAE=6.87, MAPE=6.30%
-Comparison Metrics: RMSE=16.56, MAE=15.91, MAPE=16.28%
-Comparison Metrics: RMSE=16.56, MAE=15.91, MAPE=16.28%
-Comparison Metrics: RMSE=16.56, MAE=15.91, MAPE=16.28%
-Comparison Metrics: RMSE=16.56, MAE=15.91, MAPE=16.28%
-Comparison Metrics: RMSE=23.06, MAE=20.18, MAPE=17.36%
-Comparison Metrics: RMSE=23.06, MAE=20.18, MAPE=17.36%
-Comparison Metrics: RMSE=23.06, MAE=20.18, MAPE=17.36%
-Comparison Metrics: RMSE=23.06, MAE=20.18, MAPE=17.36%
+Comparison Metrics: RMSE=26.27, MAE=25.66, MAPE=53.09%
+Comparison Metrics: RMSE=26.27, MAE=25.66, MAPE=53.09%
+Comparison Metrics: RMSE=26.27, MAE=25.66, MAPE=53.09%
+Comparison Metrics: RMSE=26.27, MAE=25.66, MAPE=53.09%
+Comparison Metrics: RMSE=60.14, MAE=58.30, MAPE=24.98%
+Comparison Metrics: RMSE=60.14, MAE=58.30, MAPE=24.98%
+Comparison Metrics: RMSE=60.14, MAE=58.30, MAPE=24.98%
+Comparison Metrics: RMSE=60.14, MAE=58.30, MAPE=24.98%
+Comparison Metrics: RMSE=38.31, MAE=36.90, MAPE=23.66%
+Comparison Metrics: RMSE=38.31, MAE=36.90, MAPE=23.66%
+Comparison Metrics: RMSE=38.31, MAE=36.90, MAPE=23.66%
+Comparison Metrics: RMSE=38.31, MAE=36.90, MAPE=23.66%
+Comparison Metrics: RMSE=29.70, MAE=29.30, MAPE=24.15%
+Comparison Metrics: RMSE=29.70, MAE=29.30, MAPE=24.15%
+Comparison Metrics: RMSE=29.70, MAE=29.30, MAPE=24.15%
+Comparison Metrics: RMSE=29.70, MAE=29.30, MAPE=24.15%
+Comparison Metrics: RMSE=37.43, MAE=37.16, MAPE=41.51%
+Comparison Metrics: RMSE=37.43, MAE=37.16, MAPE=41.51%
+Comparison Metrics: RMSE=37.43, MAE=37.16, MAPE=41.51%
+Comparison Metrics: RMSE=37.43, MAE=37.16, MAPE=41.51%
+Comparison Metrics: RMSE=32.71, MAE=32.48, MAPE=29.80%
+Comparison Metrics: RMSE=32.71, MAE=32.48, MAPE=29.80%
+Comparison Metrics: RMSE=32.71, MAE=32.48, MAPE=29.80%
+Comparison Metrics: RMSE=32.71, MAE=32.48, MAPE=29.80%
+Comparison Metrics: RMSE=48.62, MAE=46.73, MAPE=43.69%
+Comparison Metrics: RMSE=48.62, MAE=46.73, MAPE=43.69%
+Comparison Metrics: RMSE=48.62, MAE=46.73, MAPE=43.69%
+Comparison Metrics: RMSE=48.62, MAE=46.73, MAPE=43.69%
+Comparison Metrics: RMSE=62.68, MAE=56.18, MAPE=50.00%
+Comparison Metrics: RMSE=62.68, MAE=56.18, MAPE=50.00%
+Comparison Metrics: RMSE=62.68, MAE=56.18, MAPE=50.00%
+Comparison Metrics: RMSE=62.68, MAE=56.18, MAPE=50.00%
 
 ================================================================================
 DISAGREEMENT ANALYSIS

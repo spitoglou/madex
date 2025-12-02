@@ -1,6 +1,6 @@
 # Extended Bootstrap Statistical Validation Analysis
 
-**Analysis Date:** 2025-12-02 09:42:51
+**Analysis Date:** 2025-12-02 10:04:57
 
 ## Overview
 
@@ -44,42 +44,42 @@ This analysis validates the MADEX metric using extended clinical scenarios with:
 
 | Scenario | Model A MADEX (95% CI) | Model B MADEX (95% CI) | Winner |
 |----------|------------------------|------------------------|--------|
-| A | 92.97 (79.87-107.90) | 169.73 (129.29-215.60) | Model A |
-| B | 171.05 (151.26-190.68) | 598.66 (426.82-799.80) | Model A |
-| C | 82.94 (71.11-94.82) | 113.58 (89.47-139.12) | Model A |
-| D | 57.28 (51.11-63.84) | 55.61 (50.03-61.45) | Model B |
-| E | 124.41 (103.15-144.85) | 148.72 (118.96-185.60) | Model A |
-| F | 48.02 (44.36-51.60) | 48.18 (44.64-51.69) | Model A |
-| G | 181.16 (166.05-197.14) | 451.64 (362.11-546.44) | Model A |
-| H | 212.10 (181.97-242.88) | 1757.60 (1049.66-2547.62) | Model A |
+| A | 345.21 (324.82-368.19) | 1588.45 (1280.89-1920.73) | Model A |
+| B | 665.02 (396.51-994.63) | 79117.22 (46154.77-118030.61) | Model A |
+| C | 1199.95 (866.22-1634.91) | 5088.76 (3283.23-7038.71) | Model A |
+| D | 1060.12 (869.47-1270.65) | 891.85 (757.58-1053.45) | Model B |
+| E | 1691.67 (1302.76-2121.65) | 2318.34 (1732.49-2988.49) | Model A |
+| F | 1123.99 (985.22-1269.93) | 1165.66 (1025.54-1308.36) | Model A |
+| G | 1082.89 (722.93-1500.43) | 23854.25 (14624.09-33896.29) | Model A |
+| H | 798.77 (446.74-1251.84) | 307123.53 (135992.80-518215.24) | Model A |
 
 
 ### Traditional Metrics Comparison
 
 | Scenario | RMSE_A (95% CI) | RMSE_B (95% CI) | MAE_A (95% CI) | MAE_B (95% CI) |
 |----------|-----------------|-----------------|----------------|----------------|
-| A | 11.15 (10.11-12.24) | 11.14 (10.03-12.20) | 10.50 (9.48-11.63) | 10.51 (9.51-11.52) |
-| B | 17.45 (15.73-19.33) | 17.41 (15.55-19.23) | 16.49 (14.81-18.18) | 16.43 (14.81-18.04) |
-| C | 9.77 (8.86-10.62) | 9.75 (8.92-10.59) | 9.26 (8.45-10.15) | 9.28 (8.44-10.10) |
-| D | 7.49 (7.10-7.86) | 7.51 (7.11-7.88) | 7.36 (6.96-7.78) | 7.37 (6.96-7.77) |
-| E | 11.47 (10.48-12.47) | 11.46 (10.45-12.43) | 10.89 (9.99-11.87) | 10.91 (9.98-11.90) |
-| F | 6.94 (6.69-7.20) | 6.94 (6.69-7.18) | 6.87 (6.61-7.14) | 6.88 (6.61-7.14) |
-| G | 16.56 (15.33-17.91) | 16.52 (15.26-17.84) | 15.90 (14.57-17.28) | 15.87 (14.51-17.20) |
-| H | 22.93 (19.59-26.19) | 22.98 (19.53-26.36) | 20.19 (17.17-23.23) | 20.11 (17.21-23.18) |
+| A | 26.27 (24.81-27.83) | 26.24 (24.60-27.62) | 25.71 (24.13-27.28) | 25.68 (24.17-27.28) |
+| B | 60.01 (55.79-64.41) | 59.91 (55.49-64.28) | 58.43 (54.36-62.61) | 58.26 (54.22-62.22) |
+| C | 38.28 (35.34-41.12) | 38.21 (35.51-40.97) | 36.85 (34.07-39.75) | 36.91 (34.09-39.66) |
+| D | 29.68 (28.34-30.94) | 29.74 (28.37-31.03) | 29.32 (27.92-30.70) | 29.31 (28.01-30.70) |
+| E | 37.45 (36.25-38.64) | 37.42 (36.20-38.59) | 37.13 (35.98-38.38) | 37.15 (35.90-38.36) |
+| F | 32.70 (31.72-33.76) | 32.71 (31.72-33.68) | 32.50 (31.43-33.55) | 32.52 (31.45-33.55) |
+| G | 48.60 (44.83-52.75) | 48.48 (44.57-52.36) | 46.65 (42.83-50.72) | 46.65 (43.12-50.46) |
+| H | 62.37 (53.95-70.40) | 62.50 (54.09-70.90) | 56.23 (48.82-63.76) | 56.02 (48.73-63.49) |
 
 
 ### Clarke Error Grid Risk Scores
 
 | Scenario | Model A Risk | Model B Risk | Lower Risk Model |
 |----------|--------------|--------------|------------------|
-| A | 0 | 0 | Tie |
-| B | 0 | 0 | Tie |
-| C | 0 | 0 | Tie |
-| D | 0 | 0 | Tie |
-| E | 6 | 36 | Model A |
-| F | 0 | 0 | Tie |
-| G | 0 | 20 | Model A |
-| H | 1 | 16 | Model A |
+| A | 11 | 181 | Model A |
+| B | 50 | 50 | Tie |
+| C | 50 | 50 | Tie |
+| D | 49 | 49 | Tie |
+| E | 47 | 77 | Model A |
+| F | 49 | 49 | Tie |
+| G | 37 | 92 | Model A |
+| H | 32 | 82 | Model A |
 
 ---
 
@@ -89,19 +89,19 @@ This analysis validates the MADEX metric using extended clinical scenarios with:
 
 | Metric | Statistic | p-value | Cohen's d | Interpretation |
 |--------|-----------|---------|-----------|----------------|
-| MADEX | 2.00 | 0.0234 | -0.56 | Significant difference |
-| RMSE | 13.00 | 0.5469 | 0.15 | No significant difference |
-| MAE | 16.00 | 0.8438 | 0.34 | No significant difference |
+| MADEX | 2.00 | 0.0234 | -0.49 | Significant difference |
+| RMSE | 13.00 | 0.5469 | 0.21 | No significant difference |
+| MAE | 14.00 | 0.6406 | 0.39 | No significant difference |
 
 
 ### Model Comparison Summary
 
 | Scenario | MADEX Winner | RMSE Winner | MAE Winner | CI Overlap |
 |----------|--------------|-------------|------------|------------|
-| A | Model A | Model B | Model A | No |
+| A | Model A | Model B | Model B | No |
 | B | Model A | Model B | Model B | No |
-| C | Model A | Model B | Model A | Yes |
-| D | Model B | Model A | Model A | Yes |
+| C | Model A | Model B | Model A | No |
+| D | Model B | Model A | Model B | Yes |
 | E | Model A | Model B | Model A | Yes |
 | F | Model A | Model A | Model A | Yes |
 | G | Model A | Model B | Model B | No |
@@ -115,27 +115,27 @@ This analysis validates the MADEX metric using extended clinical scenarios with:
 
 | Scenario | Model A Sensitivity | Model B Sensitivity | Better Model |
 |----------|---------------------|---------------------|--------------|
-| A | 1.00 | 0.83 | Model A |
+| A | 1.00 | 0.15 | Model A |
 | B | N/A | N/A | No hypo points |
 | C | N/A | N/A | No hypo points |
 | D | N/A | N/A | No hypo points |
 | E | 1.00 | 0.00 | Model A |
 | F | N/A | N/A | No hypo points |
-| G | 1.00 | 0.69 | Model A |
-| H | 1.00 | 0.67 | Model A |
+| G | 1.00 | 0.15 | Model A |
+| H | 1.00 | 0.44 | Model A |
 
 ### Hyperglycemia Detection (>180 mg/dL)
 
 | Scenario | Model A Sensitivity | Model B Sensitivity | Better Model |
 |----------|---------------------|---------------------|--------------|
 | A | N/A | N/A | No hyper points |
-| B | 1.00 | 0.88 | Model A |
-| C | 1.00 | 0.67 | Model A |
+| B | 1.00 | 0.50 | Model A |
+| C | 1.00 | 0.00 | Model A |
 | D | N/A | N/A | No hyper points |
 | E | N/A | N/A | No hyper points |
 | F | N/A | N/A | No hyper points |
-| G | 1.00 | 0.94 | Model A |
-| H | 1.00 | 1.00 | Tie |
+| G | 1.00 | 0.61 | Model A |
+| H | 1.00 | 0.90 | Model A |
 
 ---
 
@@ -156,4 +156,4 @@ This analysis validates the MADEX metric using extended clinical scenarios with:
 
 ---
 
-*Generated by Extended Bootstrap Analysis - 2025-12-02 09:42:55*
+*Generated by Extended Bootstrap Analysis - 2025-12-02 10:05:01*

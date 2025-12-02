@@ -431,7 +431,10 @@ EUGLYCEMIC_HIGH = 180  # mg/dL
 
 
 def generate_model_predictions(
-    y_true: np.ndarray, error_magnitude: np.ndarray, seed: int = 42
+    y_true: np.ndarray,
+    error_magnitude: np.ndarray,
+    seed: int = 42,
+    min_prediction: float = 1.0,
 ) -> Tuple[np.ndarray, np.ndarray]:
     """
     Generate Model A and Model B predictions with opposite bias patterns.
@@ -446,12 +449,15 @@ def generate_model_predictions(
     - Above euglycemic range (>180): underestimates (prediction < true)
     - In euglycemic range: opposite direction from Model A
 
-    Both models have identical absolute errors.
+    Both models have identical absolute errors (RMSE and MAE are equal).
+    Error magnitudes are capped to ensure predictions stay within valid ranges
+    while maintaining equal errors between models.
 
     Args:
         y_true: Reference glucose values
         error_magnitude: Absolute error magnitude for each point
         seed: Random seed for euglycemic range direction
+        min_prediction: Minimum valid prediction value (default 1.0 mg/dL)
 
     Returns:
         Tuple of (model_a_predictions, model_b_predictions)
@@ -466,23 +472,28 @@ def generate_model_predictions(
         true_val = y_true[i]
         error = error_magnitude[i]
 
+        # Cap error magnitude to ensure predictions stay above minimum
+        # This ensures both models have identical absolute errors
+        max_error = true_val - min_prediction
+        capped_error = min(error, max_error) if max_error > 0 else error
+
         if true_val < EUGLYCEMIC_LOW:
             # Below euglycemic: A underestimates, B overestimates
-            model_a[i] = true_val - error
-            model_b[i] = true_val + error
+            model_a[i] = true_val - capped_error
+            model_b[i] = true_val + capped_error
         elif true_val > EUGLYCEMIC_HIGH:
             # Above euglycemic: A overestimates, B underestimates
-            model_a[i] = true_val + error
-            model_b[i] = true_val - error
+            model_a[i] = true_val + capped_error
+            model_b[i] = true_val - capped_error
         else:
             # In euglycemic range: random direction, opposite between models
             direction = np.random.choice([-1, 1])
-            model_a[i] = true_val + direction * error
-            model_b[i] = true_val - direction * error
+            model_a[i] = true_val + direction * capped_error
+            model_b[i] = true_val - direction * capped_error
 
-    # Ensure no negative predictions
-    model_a = np.maximum(model_a, 1)
-    model_b = np.maximum(model_b, 1)
+    # Safety check: ensure no predictions below minimum
+    model_a = np.maximum(model_a, min_prediction)
+    model_b = np.maximum(model_b, min_prediction)
 
     return model_a, model_b
 
@@ -501,6 +512,8 @@ class ExtendedScenarioRepository(ScenarioRepository):
         """Initialize repository with extended 50-point clinical scenarios"""
 
         # Scenario A: Hypoglycemia Detection
+        # Error magnitudes increased to push predictions outside Clarke Zone A
+        # Zone A boundary: ±20 mg/dL for glucose ≤70, ±20% for glucose >70
         y_true_a = np.concatenate(
             [
                 np.linspace(85, 55, 10),
@@ -512,16 +525,18 @@ class ExtendedScenarioRepository(ScenarioRepository):
         )
         error_a = np.concatenate(
             [
-                np.linspace(5, 10, 10),
-                np.linspace(10, 15, 10),
-                np.array([15, 16, 17, 18, 20, 18, 16, 15, 13, 12]),
-                np.linspace(12, 8, 10),
-                np.linspace(8, 5, 10),
+                np.linspace(15, 25, 10),
+                np.linspace(25, 35, 10),
+                np.array([35, 38, 40, 42, 45, 42, 38, 35, 32, 30]),
+                np.linspace(30, 22, 10),
+                np.linspace(22, 18, 10),
             ]
         )
         pred_a_a, pred_b_a = generate_model_predictions(y_true_a, error_a, seed=1)
 
         # Scenario B: Hyperglycemia Management
+        # Error magnitudes increased to push predictions outside Clarke Zone A
+        # Zone A boundary: ±20% for glucose >70 mg/dL
         y_true_b = np.concatenate(
             [
                 np.linspace(150, 200, 10),
@@ -533,16 +548,17 @@ class ExtendedScenarioRepository(ScenarioRepository):
         )
         error_b = np.concatenate(
             [
-                np.linspace(8, 12, 10),
-                np.linspace(12, 20, 10),
-                np.array([22, 25, 28, 30, 32, 30, 28, 25, 22, 20]),
-                np.linspace(20, 15, 10),
-                np.linspace(15, 10, 10),
+                np.linspace(35, 50, 10),
+                np.linspace(50, 70, 10),
+                np.array([75, 80, 85, 90, 95, 90, 85, 80, 70, 65]),
+                np.linspace(65, 55, 10),
+                np.linspace(55, 40, 10),
             ]
         )
         pred_a_b, pred_b_b = generate_model_predictions(y_true_b, error_b, seed=2)
 
         # Scenario C: Postprandial Response
+        # Error magnitudes increased to push predictions outside Clarke Zone A
         y_true_c = np.concatenate(
             [
                 np.linspace(95, 110, 8),
@@ -554,16 +570,17 @@ class ExtendedScenarioRepository(ScenarioRepository):
         )
         error_c = np.concatenate(
             [
-                np.linspace(5, 6, 8),
-                np.linspace(6, 10, 10),
-                np.linspace(10, 15, 8),
-                np.linspace(15, 10, 12),
-                np.linspace(10, 5, 12),
+                np.linspace(20, 25, 8),
+                np.linspace(25, 40, 10),
+                np.linspace(40, 55, 8),
+                np.linspace(55, 40, 12),
+                np.linspace(40, 25, 12),
             ]
         )
         pred_a_c, pred_b_c = generate_model_predictions(y_true_c, error_c, seed=3)
 
         # Scenario D: Dawn Phenomenon
+        # Error magnitudes increased to push predictions outside Clarke Zone A
         y_true_d = np.concatenate(
             [
                 np.linspace(110, 100, 10),
@@ -575,16 +592,17 @@ class ExtendedScenarioRepository(ScenarioRepository):
         )
         error_d = np.concatenate(
             [
-                np.linspace(5, 6, 10),
-                np.array([6, 6, 7, 7, 8, 8, 7, 7, 6, 6]),
-                np.linspace(6, 8, 10),
-                np.linspace(8, 10, 10),
-                np.linspace(10, 7, 10),
+                np.linspace(22, 25, 10),
+                np.array([25, 26, 27, 28, 30, 30, 28, 27, 25, 24]),
+                np.linspace(24, 30, 10),
+                np.linspace(30, 38, 10),
+                np.linspace(38, 32, 10),
             ]
         )
         pred_a_d, pred_b_d = generate_model_predictions(y_true_d, error_d, seed=4)
 
         # Scenario E: Exercise Response
+        # Error magnitudes increased to push predictions outside Clarke Zone A
         y_true_e = np.concatenate(
             [
                 np.linspace(140, 130, 8),
@@ -596,23 +614,25 @@ class ExtendedScenarioRepository(ScenarioRepository):
         )
         error_e = np.concatenate(
             [
-                np.linspace(6, 8, 8),
-                np.linspace(8, 12, 12),
-                np.linspace(12, 18, 10),
-                np.linspace(18, 10, 10),
-                np.linspace(10, 6, 10),
+                np.linspace(32, 35, 8),
+                np.linspace(35, 40, 12),
+                np.linspace(40, 45, 10),
+                np.linspace(45, 35, 10),
+                np.linspace(35, 28, 10),
             ]
         )
         pred_a_e, pred_b_e = generate_model_predictions(y_true_e, error_e, seed=5)
 
         # Scenario F: Measurement Noise (Stable Euglycemic)
+        # Error magnitudes increased to push predictions outside Clarke Zone A
         base_f = 110 + 15 * np.sin(np.linspace(0, 4 * np.pi, 50))
         noise_f = np.random.RandomState(6).normal(0, 5, 50)
         y_true_f = np.clip(base_f + noise_f, 85, 140)
-        error_f = 5 + 3 * np.abs(np.sin(np.linspace(0, 6 * np.pi, 50)))
+        error_f = 25 + 12 * np.abs(np.sin(np.linspace(0, 6 * np.pi, 50)))
         pred_a_f, pred_b_f = generate_model_predictions(y_true_f, error_f, seed=6)
 
         # Scenario G: Mixed Clinical (Full Range)
+        # Error magnitudes increased to push predictions outside Clarke Zone A
         y_true_g = np.concatenate(
             [
                 np.linspace(100, 50, 8),
@@ -626,18 +646,19 @@ class ExtendedScenarioRepository(ScenarioRepository):
         )
         error_g = np.concatenate(
             [
-                np.linspace(8, 15, 8),
-                np.linspace(15, 20, 5),
-                np.linspace(20, 10, 7),
-                np.linspace(10, 12, 8),
-                np.linspace(12, 20, 8),
-                np.linspace(20, 25, 6),
-                np.linspace(25, 15, 8),
+                np.linspace(25, 40, 8),
+                np.linspace(40, 50, 5),
+                np.linspace(50, 35, 7),
+                np.linspace(35, 40, 8),
+                np.linspace(40, 60, 8),
+                np.linspace(60, 75, 6),
+                np.linspace(75, 50, 8),
             ]
         )
         pred_a_g, pred_b_g = generate_model_predictions(y_true_g, error_g, seed=7)
 
         # Scenario H: Extreme Cases
+        # Error magnitudes increased to push predictions outside Clarke Zone A
         y_true_h = np.concatenate(
             [
                 np.linspace(80, 40, 8),
@@ -650,12 +671,12 @@ class ExtendedScenarioRepository(ScenarioRepository):
         )
         error_h = np.concatenate(
             [
-                np.linspace(10, 15, 8),
-                np.array([12, 10, 8, 7, 6, 7, 8, 10, 14, 18]),
-                np.linspace(18, 10, 8),
-                np.linspace(10, 25, 8),
-                np.array([28, 32, 35, 38, 40, 42, 45, 42, 40, 35]),
-                np.linspace(35, 25, 6),
+                np.linspace(30, 45, 8),
+                np.array([40, 38, 35, 32, 30, 32, 35, 38, 42, 48]),
+                np.linspace(48, 35, 8),
+                np.linspace(35, 70, 8),
+                np.array([75, 85, 95, 100, 105, 110, 115, 110, 105, 95]),
+                np.linspace(95, 65, 6),
             ]
         )
         pred_a_h, pred_b_h = generate_model_predictions(y_true_h, error_h, seed=8)
