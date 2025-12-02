@@ -30,7 +30,7 @@ from new_metric.common import (
     StatisticalAnalysis,
     get_standard_madex_params,
 )
-from new_metric.common.clinical_data_extended import (
+from new_metric.common.clinical_data import (
     EUGLYCEMIC_HIGH,
     EUGLYCEMIC_LOW,
     get_extended_clinical_scenarios,

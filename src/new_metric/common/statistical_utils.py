@@ -18,7 +18,6 @@ from typing import Callable, Dict, List, Optional, Tuple, Union
 
 import numpy as np
 from scipy.stats import wilcoxon
-from sklearn.utils import resample
 
 from .clinical_data import MADEXParameters
 from .clinical_logging import ClinicalLogger
@@ -111,8 +110,8 @@ class MetricCalculator:
             madex_score = result["score"]
 
             self.logger.log_narrative(
-                f"Adaptive exponent calculation: Base exponent=2, "
-                f"modified by tanh((glucose-center)/critical_range) * (error/slope)"
+                "Adaptive exponent calculation: Base exponent=2, "
+                "modified by tanh((glucose-center)/critical_range) * (error/slope)"
             )
             self.logger.log_narrative(
                 f"Exponent range: {result['exponents'].min():.3f} to {result['exponents'].max():.3f} "
@@ -125,7 +124,7 @@ class MetricCalculator:
             )
 
             self.logger.log_clinical_assessment(
-                "VERIFIED", f"Using canonical MADEXCalculator implementation"
+                "VERIFIED", "Using canonical MADEXCalculator implementation"
             )
 
             return madex_score

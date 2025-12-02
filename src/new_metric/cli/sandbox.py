@@ -5,7 +5,6 @@ Extended scenario analysis comparing Model A and Model B predictions
 across clinical scenarios with 50 data points each.
 """
 
-import os
 from pathlib import Path
 from typing import Optional
 

@@ -17,7 +17,7 @@ from sklearn.metrics import mean_squared_error
 
 from new_metric.cega import clarke_error_grid
 from new_metric.common import get_standard_madex_params
-from new_metric.common.clinical_data_extended import get_extended_clinical_scenarios
+from new_metric.common.clinical_data import get_extended_clinical_scenarios
 from new_metric.madex import graph_vs_mse, mean_adjusted_exponent_error
 
 # Get standard MADEX parameters (a=125, b=55, c=100)

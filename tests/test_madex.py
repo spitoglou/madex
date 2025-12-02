@@ -1,8 +1,6 @@
 import inspect
 from unittest import TestCase
 
-import numpy as np
-
 from new_metric import (
     MADEXCalculator,
     MADEXParameters,

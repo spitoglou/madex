@@ -17,7 +17,6 @@ from pathlib import Path
 
 # Third-party imports
 import numpy as np
-from scipy.stats import wilcoxon
 
 # Local imports
 from new_metric.cega import clarke_error_grid
@@ -26,7 +25,7 @@ from new_metric.common import (
     StatisticalAnalysis,
     get_standard_madex_params,
 )
-from new_metric.common.clinical_data_extended import get_extended_clinical_scenarios
+from new_metric.common.clinical_data import get_extended_clinical_scenarios
 
 # Configure warnings
 warnings.filterwarnings("ignore")
@@ -90,9 +89,9 @@ class ExtendedBootstrapAnalysis(ClinicalAnalysis, StatisticalAnalysis):
             f"Analysis initiated at: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}"
         )
         self.logger.log_narrative(
-            f"Analysis type: Bootstrap confidence interval validation for MADEX metric"
+            "Analysis type: Bootstrap confidence interval validation for MADEX metric"
         )
-        self.logger.log_narrative(f"Data: Extended scenarios with 50 data points each")
+        self.logger.log_narrative("Data: Extended scenarios with 50 data points each")
 
         # Execute analysis
         results = self._execute_scenario_analysis()
@@ -136,7 +135,7 @@ class ExtendedBootstrapAnalysis(ClinicalAnalysis, StatisticalAnalysis):
 
         self.logger.log_section_header("BOOTSTRAP ANALYSIS EXECUTION", level=2)
         self.logger.log_narrative(
-            f"Bootstrap parameters: n_bootstrap=1000, confidence_interval=95%"
+            "Bootstrap parameters: n_bootstrap=1000, confidence_interval=95%"
         )
 
         param_interpretations = self.madex_params.get_clinical_interpretation()
@@ -242,7 +241,7 @@ class ExtendedBootstrapAnalysis(ClinicalAnalysis, StatisticalAnalysis):
 
         # Bootstrap analysis
         self.logger.log_narrative(
-            f"Computing bootstrap confidence intervals (n=1000)..."
+            "Computing bootstrap confidence intervals (n=1000)..."
         )
 
         # MADEX bootstrap
@@ -271,7 +270,7 @@ class ExtendedBootstrapAnalysis(ClinicalAnalysis, StatisticalAnalysis):
         )
 
         # Log results
-        self.logger.log_narrative(f"Bootstrap results computed:")
+        self.logger.log_narrative("Bootstrap results computed:")
         self.logger.log_narrative(
             f"  MADEX - Model A: {madex_a:.2f} ({madex_a_lower:.2f}-{madex_a_upper:.2f})"
         )
@@ -280,7 +279,7 @@ class ExtendedBootstrapAnalysis(ClinicalAnalysis, StatisticalAnalysis):
         )
 
         # Clarke Error Grid Analysis
-        self.logger.log_narrative(f"Performing Clarke Error Grid Analysis...")
+        self.logger.log_narrative("Performing Clarke Error Grid Analysis...")
         plot_a, zones_a = clarke_error_grid(
             y_true, pred_a, f"Scenario {scenario_id} Model A"
         )
@@ -574,7 +573,7 @@ class ExtendedBootstrapAnalysis(ClinicalAnalysis, StatisticalAnalysis):
             "=" * 50,
             f"Analysis completed at: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}",
             f"Scenarios analyzed: {len(self.results)}",
-            f"Data points per scenario: 50",
+            "Data points per scenario: 50",
             "",
             "Key Findings:",
             "- Bootstrap validation confirms MADEX metric statistical reliability",

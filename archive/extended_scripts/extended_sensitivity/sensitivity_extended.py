@@ -17,19 +17,16 @@ from itertools import product
 from pathlib import Path
 
 # Third-party imports
-import numpy as np
 import pandas as pd
-from scipy.stats import wilcoxon
 
 # Local imports
-from new_metric import mean_adjusted_exponent_error
 from new_metric.common import (
     ClinicalAnalysis,
     MADEXParameters,
     StatisticalAnalysis,
     get_standard_madex_params,
 )
-from new_metric.common.clinical_data_extended import get_extended_clinical_scenarios
+from new_metric.common.clinical_data import get_extended_clinical_scenarios
 
 # Configure warnings
 warnings.filterwarnings("ignore")
@@ -137,7 +134,7 @@ class ExtendedSensitivityAnalysis(ClinicalAnalysis, StatisticalAnalysis):
     def conduct_sensitivity_analysis(self, a_values, b_values, c_values):
         """Conduct comprehensive sensitivity analysis"""
         self.logger.log_section_header("MADEX SENSITIVITY ANALYSIS INITIATED", level=2)
-        self.logger.log_narrative(f"Parameter ranges being tested:")
+        self.logger.log_narrative("Parameter ranges being tested:")
         self.logger.log_narrative(
             f"- Parameter 'a' (euglycemic center): {a_values} mg/dL"
         )
@@ -153,7 +150,7 @@ class ExtendedSensitivityAnalysis(ClinicalAnalysis, StatisticalAnalysis):
         baseline_rankings = {}
 
         print("Conducting Extended MADEX Sensitivity Analysis...")
-        print(f"Using 50 data points per scenario")
+        print("Using 50 data points per scenario")
         print("=" * 60)
 
         # Calculate baseline rankings using standard parameters
@@ -274,8 +271,8 @@ class ExtendedSensitivityAnalysis(ClinicalAnalysis, StatisticalAnalysis):
                 "",
                 "### Overall Stability Metrics",
                 "",
-                f"| Metric | Value |",
-                f"|--------|-------|",
+                "| Metric | Value |",
+                "|--------|-------|",
                 f"| Mean ranking consistency | {mean_consistency:.3f} ({mean_consistency * 100:.1f}%) |",
                 f"| Standard deviation | {std_consistency:.3f} |",
                 f"| Minimum consistency | {min_consistency:.3f} ({min_consistency * 100:.1f}%) |",
@@ -486,7 +483,7 @@ class ExtendedSensitivityAnalysis(ClinicalAnalysis, StatisticalAnalysis):
             ]
         )
 
-        print(f"\nMetric Agreement Rates:")
+        print("\nMetric Agreement Rates:")
         print(
             f"MADEX vs RMSE agreement: {madex_vs_rmse:.3f} ({madex_vs_rmse * 100:.1f}%)"
         )
@@ -529,7 +526,7 @@ class ExtendedSensitivityAnalysis(ClinicalAnalysis, StatisticalAnalysis):
             ]
         )
 
-        print(f"\nDisagreement Analysis:")
+        print("\nDisagreement Analysis:")
         print(
             f"MADEX vs RMSE disagreements: {len(rmse_disagreements)}/{total_scenarios}"
         )

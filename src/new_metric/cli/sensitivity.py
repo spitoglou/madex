@@ -9,12 +9,10 @@ import warnings
 from datetime import datetime
 from itertools import product
 from pathlib import Path
-from typing import List, Optional, Tuple
+from typing import Optional, Tuple
 
-import numpy as np
 import pandas as pd
 
-from new_metric import mean_adjusted_exponent_error
 from new_metric.common import (
     ClinicalAnalysis,
     MADEXParameters,
@@ -144,7 +142,7 @@ class SensitivityAnalysis(ClinicalAnalysis, StatisticalAnalysis):
     def conduct_sensitivity_analysis(self):
         """Conduct comprehensive sensitivity analysis"""
         self.logger.log_section_header("MADEX SENSITIVITY ANALYSIS INITIATED", level=2)
-        self.logger.log_narrative(f"Parameter ranges being tested:")
+        self.logger.log_narrative("Parameter ranges being tested:")
         self.logger.log_narrative(
             f"- Parameter 'a' (euglycemic center): {self.a_values} mg/dL"
         )
@@ -162,7 +160,7 @@ class SensitivityAnalysis(ClinicalAnalysis, StatisticalAnalysis):
         baseline_rankings = {}
 
         print("Conducting Extended MADEX Sensitivity Analysis...")
-        print(f"Using 50 data points per scenario")
+        print("Using 50 data points per scenario")
         print("=" * 60)
 
         # Calculate baseline rankings using standard parameters
@@ -453,7 +451,7 @@ class SensitivityAnalysis(ClinicalAnalysis, StatisticalAnalysis):
             ]
         )
 
-        print(f"\nMetric Agreement Rates:")
+        print("\nMetric Agreement Rates:")
         print(
             f"MADEX vs RMSE agreement: {madex_vs_rmse:.3f} ({madex_vs_rmse * 100:.1f}%)"
         )
@@ -496,7 +494,7 @@ class SensitivityAnalysis(ClinicalAnalysis, StatisticalAnalysis):
             ]
         )
 
-        print(f"\nDisagreement Analysis:")
+        print("\nDisagreement Analysis:")
         print(
             f"MADEX vs RMSE disagreements: {len(rmse_disagreements)}/{total_scenarios}"
         )
