@@ -1,0 +1,21 @@
+# Old/inactive code
+archive/
+
+# Virtual environment
+.venv/
+
+# Git internals
+.git/
+
+# Python bytecode
+__pycache__/
+
+# Coverage files
+.coverage
+cov.xml
+
+# Lock files (auto-generated)
+uv.lock
+
+# Jupyter checkpoints
+.ipynb_checkpoints/
