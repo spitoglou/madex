@@ -1,0 +1,275 @@
+
+====================================================================================================
+EXTENDED MADEX BOOTSTRAP STATISTICAL VALIDATION ANALYSIS
+====================================================================================================
+Analysis initiated at: 2025-12-02 09:08:06
+Analysis type: Bootstrap confidence interval validation for MADEX metric
+Data: Extended scenarios with 50 data points each
+
+================================================================================
+CLINICAL SCENARIO ANALYSIS
+================================================================================
+
+A: Hypoglycemia Detection
+Description: Hypoglycemic episode with recovery (30-85 mg/dL)
+Risk Level: CRITICAL
+Clinical Context: Life-threatening hypoglycemia requiring immediate intervention
+
+B: Hyperglycemia Management
+Description: Hyperglycemic episode with treatment (150-325 mg/dL)
+Risk Level: HIGH
+Clinical Context: Severe hyperglycemia requiring aggressive treatment
+
+C: Postprandial Response
+Description: Post-meal glucose spike pattern (95-220 mg/dL)
+Risk Level: MODERATE
+Clinical Context: Post-meal glucose management challenges
+
+D: Dawn Phenomenon
+Description: Early morning glucose rise pattern (90-160 mg/dL)
+Risk Level: LOW
+Clinical Context: Natural circadian glucose elevation
+
+E: Exercise Response
+Description: Exercise-induced glucose changes (60-140 mg/dL)
+Risk Level: MODERATE
+Clinical Context: Exercise-induced hypoglycemia risk
+
+F: Measurement Noise
+Description: Stable euglycemic with sensor variations (85-140 mg/dL)
+Risk Level: LOW
+Clinical Context: Measurement precision in normal glucose range
+
+G: Mixed Clinical
+Description: Full glucose range coverage (35-300 mg/dL)
+Risk Level: CRITICAL
+Clinical Context: Mixed critical events testing robustness
+
+H: Extreme Cases
+Description: Life-threatening glucose extremes (20-450 mg/dL)
+Risk Level: CRITICAL
+Clinical Context: Extreme glucose values requiring emergency care
+
+================================================================================
+BOOTSTRAP ANALYSIS EXECUTION
+================================================================================
+Bootstrap parameters: n_bootstrap=1000, confidence_interval=95%
+Parameter 'a'=125.0 indicates Standard glycemic control target (125.0 mg/dL) - normal management
+Parameter 'b'=55.0 indicates Moderate sensitivity to deviations (b=55.0) - balanced error penalties
+Parameter 'c'=100.0 indicates Standard error scaling (c=100.0) - balanced error penalties
+
+[1/8] ANALYZING SCENARIO A: Hypoglycemia Detection
+Clinical Context: Life-threatening hypoglycemia requiring immediate intervention
+Risk Level: CRITICAL
+Data points: 50, Glucose range: 30.0-85.0 mg/dL
+Computing bootstrap confidence intervals (n=1000)...
+Bootstrap analysis: 1000 samples, 95% CI: 79.870-107.900, mean: 92.966
+Bootstrap analysis: 1000 samples, 95% CI: 129.285-215.602, mean: 169.728
+Bootstrap analysis: 1000 samples, 95% CI: 10.107-12.236, mean: 11.150
+Bootstrap analysis: 1000 samples, 95% CI: 10.031-12.200, mean: 11.144
+Bootstrap analysis: 1000 samples, 95% CI: 9.480-11.629, mean: 10.502
+Bootstrap analysis: 1000 samples, 95% CI: 9.506-11.525, mean: 10.505
+Bootstrap results computed:
+  MADEX - Model A: 92.97 (79.87-107.90)
+  MADEX - Model B: 169.73 (129.29-215.60)
+Performing Clarke Error Grid Analysis...
+Clarke Error Grid zones: ['A (Accurate): 50', 'B (Acceptable): 0', 'C (Overcorrecting): 0', 'D (Failure to Detect): 0', 'E (Erroneous): 0']
+Clinical risk score: 0
+Clarke Error Grid zones: ['A (Accurate): 50', 'B (Acceptable): 0', 'C (Overcorrecting): 0', 'D (Failure to Detect): 0', 'E (Erroneous): 0']
+Clinical risk score: 0
+  [SUCCESS] MADEX confidence intervals do not overlap - significant difference
+
+[2/8] ANALYZING SCENARIO B: Hyperglycemia Management
+Clinical Context: Severe hyperglycemia requiring aggressive treatment
+Risk Level: HIGH
+Data points: 50, Glucose range: 150.0-325.0 mg/dL
+Computing bootstrap confidence intervals (n=1000)...
+Bootstrap analysis: 1000 samples, 95% CI: 151.264-190.681, mean: 171.052
+Bootstrap analysis: 1000 samples, 95% CI: 426.817-799.797, mean: 598.655
+Bootstrap analysis: 1000 samples, 95% CI: 15.732-19.334, mean: 17.446
+Bootstrap analysis: 1000 samples, 95% CI: 15.555-19.231, mean: 17.411
+Bootstrap analysis: 1000 samples, 95% CI: 14.809-18.176, mean: 16.486
+Bootstrap analysis: 1000 samples, 95% CI: 14.806-18.045, mean: 16.428
+Bootstrap results computed:
+  MADEX - Model A: 171.05 (151.26-190.68)
+  MADEX - Model B: 598.66 (426.82-799.80)
+Performing Clarke Error Grid Analysis...
+Clarke Error Grid zones: ['A (Accurate): 50', 'B (Acceptable): 0', 'C (Overcorrecting): 0', 'D (Failure to Detect): 0', 'E (Erroneous): 0']
+Clinical risk score: 0
+Clarke Error Grid zones: ['A (Accurate): 50', 'B (Acceptable): 0', 'C (Overcorrecting): 0', 'D (Failure to Detect): 0', 'E (Erroneous): 0']
+Clinical risk score: 0
+  [SUCCESS] MADEX confidence intervals do not overlap - significant difference
+
+[3/8] ANALYZING SCENARIO C: Postprandial Response
+Clinical Context: Post-meal glucose management challenges
+Risk Level: MODERATE
+Data points: 50, Glucose range: 95.0-220.0 mg/dL
+Computing bootstrap confidence intervals (n=1000)...
+Bootstrap analysis: 1000 samples, 95% CI: 71.107-94.818, mean: 82.944
+Bootstrap analysis: 1000 samples, 95% CI: 89.468-139.118, mean: 113.583
+Bootstrap analysis: 1000 samples, 95% CI: 8.863-10.617, mean: 9.766
+Bootstrap analysis: 1000 samples, 95% CI: 8.920-10.590, mean: 9.745
+Bootstrap analysis: 1000 samples, 95% CI: 8.455-10.150, mean: 9.264
+Bootstrap analysis: 1000 samples, 95% CI: 8.437-10.102, mean: 9.282
+Bootstrap results computed:
+  MADEX - Model A: 82.94 (71.11-94.82)
+  MADEX - Model B: 113.58 (89.47-139.12)
+Performing Clarke Error Grid Analysis...
+Clarke Error Grid zones: ['A (Accurate): 50', 'B (Acceptable): 0', 'C (Overcorrecting): 0', 'D (Failure to Detect): 0', 'E (Erroneous): 0']
+Clinical risk score: 0
+Clarke Error Grid zones: ['A (Accurate): 50', 'B (Acceptable): 0', 'C (Overcorrecting): 0', 'D (Failure to Detect): 0', 'E (Erroneous): 0']
+Clinical risk score: 0
+  [WARNING] MADEX confidence intervals overlap
+
+[4/8] ANALYZING SCENARIO D: Dawn Phenomenon
+Clinical Context: Natural circadian glucose elevation
+Risk Level: LOW
+Data points: 50, Glucose range: 90.0-160.0 mg/dL
+Computing bootstrap confidence intervals (n=1000)...
+Bootstrap analysis: 1000 samples, 95% CI: 51.108-63.835, mean: 57.280
+Bootstrap analysis: 1000 samples, 95% CI: 50.028-61.452, mean: 55.611
+Bootstrap analysis: 1000 samples, 95% CI: 7.095-7.862, mean: 7.490
+Bootstrap analysis: 1000 samples, 95% CI: 7.111-7.885, mean: 7.510
+Bootstrap analysis: 1000 samples, 95% CI: 6.962-7.778, mean: 7.365
+Bootstrap analysis: 1000 samples, 95% CI: 6.964-7.767, mean: 7.366
+Bootstrap results computed:
+  MADEX - Model A: 57.28 (51.11-63.84)
+  MADEX - Model B: 55.61 (50.03-61.45)
+Performing Clarke Error Grid Analysis...
+Clarke Error Grid zones: ['A (Accurate): 50', 'B (Acceptable): 0', 'C (Overcorrecting): 0', 'D (Failure to Detect): 0', 'E (Erroneous): 0']
+Clinical risk score: 0
+Clarke Error Grid zones: ['A (Accurate): 50', 'B (Acceptable): 0', 'C (Overcorrecting): 0', 'D (Failure to Detect): 0', 'E (Erroneous): 0']
+Clinical risk score: 0
+  [WARNING] MADEX confidence intervals overlap
+
+[5/8] ANALYZING SCENARIO E: Exercise Response
+Clinical Context: Exercise-induced hypoglycemia risk
+Risk Level: MODERATE
+Data points: 50, Glucose range: 60.0-140.0 mg/dL
+Computing bootstrap confidence intervals (n=1000)...
+Bootstrap analysis: 1000 samples, 95% CI: 103.149-144.854, mean: 124.410
+Bootstrap analysis: 1000 samples, 95% CI: 118.956-185.596, mean: 148.720
+Bootstrap analysis: 1000 samples, 95% CI: 10.482-12.468, mean: 11.470
+Bootstrap analysis: 1000 samples, 95% CI: 10.454-12.427, mean: 11.456
+Bootstrap analysis: 1000 samples, 95% CI: 9.989-11.870, mean: 10.885
+Bootstrap analysis: 1000 samples, 95% CI: 9.981-11.900, mean: 10.914
+Bootstrap results computed:
+  MADEX - Model A: 124.41 (103.15-144.85)
+  MADEX - Model B: 148.72 (118.96-185.60)
+Performing Clarke Error Grid Analysis...
+Clarke Error Grid zones: ['A (Accurate): 48', 'B (Acceptable): 1', 'C (Overcorrecting): 0', 'D (Failure to Detect): 1', 'E (Erroneous): 0']
+Clinical risk score: 6
+Clarke Error Grid zones: ['A (Accurate): 42', 'B (Acceptable): 1', 'C (Overcorrecting): 0', 'D (Failure to Detect): 7', 'E (Erroneous): 0']
+Clinical risk score: 36
+  [WARNING] MADEX confidence intervals overlap
+
+[6/8] ANALYZING SCENARIO F: Measurement Noise
+Clinical Context: Measurement precision in normal glucose range
+Risk Level: LOW
+Data points: 50, Glucose range: 90.3-131.5 mg/dL
+Computing bootstrap confidence intervals (n=1000)...
+Bootstrap analysis: 1000 samples, 95% CI: 44.360-51.599, mean: 48.017
+Bootstrap analysis: 1000 samples, 95% CI: 44.641-51.694, mean: 48.182
+Bootstrap analysis: 1000 samples, 95% CI: 6.688-7.198, mean: 6.935
+Bootstrap analysis: 1000 samples, 95% CI: 6.690-7.177, mean: 6.938
+Bootstrap analysis: 1000 samples, 95% CI: 6.608-7.138, mean: 6.874
+Bootstrap analysis: 1000 samples, 95% CI: 6.612-7.137, mean: 6.881
+Bootstrap results computed:
+  MADEX - Model A: 48.02 (44.36-51.60)
+  MADEX - Model B: 48.18 (44.64-51.69)
+Performing Clarke Error Grid Analysis...
+Clarke Error Grid zones: ['A (Accurate): 50', 'B (Acceptable): 0', 'C (Overcorrecting): 0', 'D (Failure to Detect): 0', 'E (Erroneous): 0']
+Clinical risk score: 0
+Clarke Error Grid zones: ['A (Accurate): 50', 'B (Acceptable): 0', 'C (Overcorrecting): 0', 'D (Failure to Detect): 0', 'E (Erroneous): 0']
+Clinical risk score: 0
+  [WARNING] MADEX confidence intervals overlap
+
+[7/8] ANALYZING SCENARIO G: Mixed Clinical
+Clinical Context: Mixed critical events testing robustness
+Risk Level: CRITICAL
+Data points: 50, Glucose range: 35.0-300.0 mg/dL
+Computing bootstrap confidence intervals (n=1000)...
+Bootstrap analysis: 1000 samples, 95% CI: 166.045-197.143, mean: 181.158
+Bootstrap analysis: 1000 samples, 95% CI: 362.110-546.440, mean: 451.643
+Bootstrap analysis: 1000 samples, 95% CI: 15.330-17.911, mean: 16.555
+Bootstrap analysis: 1000 samples, 95% CI: 15.257-17.837, mean: 16.525
+Bootstrap analysis: 1000 samples, 95% CI: 14.575-17.282, mean: 15.898
+Bootstrap analysis: 1000 samples, 95% CI: 14.506-17.202, mean: 15.874
+Bootstrap results computed:
+  MADEX - Model A: 181.16 (166.05-197.14)
+  MADEX - Model B: 451.64 (362.11-546.44)
+Performing Clarke Error Grid Analysis...
+Clarke Error Grid zones: ['A (Accurate): 50', 'B (Acceptable): 0', 'C (Overcorrecting): 0', 'D (Failure to Detect): 0', 'E (Erroneous): 0']
+Clinical risk score: 0
+Clarke Error Grid zones: ['A (Accurate): 46', 'B (Acceptable): 0', 'C (Overcorrecting): 0', 'D (Failure to Detect): 4', 'E (Erroneous): 0']
+Clinical risk score: 20
+  [SUCCESS] MADEX confidence intervals do not overlap - significant difference
+
+[8/8] ANALYZING SCENARIO H: Extreme Cases
+Clinical Context: Extreme glucose values requiring emergency care
+Risk Level: CRITICAL
+Data points: 50, Glucose range: 20.0-450.0 mg/dL
+Computing bootstrap confidence intervals (n=1000)...
+Bootstrap analysis: 1000 samples, 95% CI: 181.971-242.881, mean: 212.099
+Bootstrap analysis: 1000 samples, 95% CI: 1049.656-2547.620, mean: 1757.603
+Bootstrap analysis: 1000 samples, 95% CI: 19.587-26.192, mean: 22.932
+Bootstrap analysis: 1000 samples, 95% CI: 19.531-26.365, mean: 22.981
+Bootstrap analysis: 1000 samples, 95% CI: 17.171-23.227, mean: 20.195
+Bootstrap analysis: 1000 samples, 95% CI: 17.206-23.176, mean: 20.110
+Bootstrap results computed:
+  MADEX - Model A: 212.10 (181.97-242.88)
+  MADEX - Model B: 1757.60 (1049.66-2547.62)
+Performing Clarke Error Grid Analysis...
+Clarke Error Grid zones: ['A (Accurate): 49', 'B (Acceptable): 1', 'C (Overcorrecting): 0', 'D (Failure to Detect): 0', 'E (Erroneous): 0']
+Clinical risk score: 1
+Clarke Error Grid zones: ['A (Accurate): 46', 'B (Acceptable): 1', 'C (Overcorrecting): 0', 'D (Failure to Detect): 3', 'E (Erroneous): 0']
+Clinical risk score: 16
+  [SUCCESS] MADEX confidence intervals do not overlap - significant difference
+
+================================================================================
+STATISTICAL SIGNIFICANCE TESTING
+================================================================================
+
+MADEX Statistical Analysis:
+  Wilcoxon statistic: 2.00
+  P-value: 0.0234
+  Cohen's d (effect size): -0.56
+  Interpretation: significant (p < 0.05) - Evidence of difference
+  Effect size: medium effect size
+  Preferred model: Model A
+
+RMSE Statistical Analysis:
+  Wilcoxon statistic: 13.00
+  P-value: 0.5469
+  Cohen's d (effect size): 0.15
+  Interpretation: not significant (p >= 0.10) - No evidence of difference
+  Effect size: negligible effect size
+  Preferred model: Model B
+
+MAE Statistical Analysis:
+  Wilcoxon statistic: 16.00
+  P-value: 0.8438
+  Cohen's d (effect size): 0.34
+  Interpretation: not significant (p >= 0.10) - No evidence of difference
+  Effect size: small effect size
+  Preferred model: Model B
+
+================================================================================
+CLINICAL DETECTION SENSITIVITY ANALYSIS
+================================================================================
+Hypoglycemia detection (<70.0 mg/dL): 41/41 events detected (sensitivity: 1.00)
+Hypoglycemia detection (<70.0 mg/dL): 34/41 events detected (sensitivity: 0.83)
+Hypoglycemia detection (<70.0 mg/dL): 7/7 events detected (sensitivity: 1.00)
+Hypoglycemia detection (<70.0 mg/dL): 0/7 events detected (sensitivity: 0.00)
+Hypoglycemia detection (<70.0 mg/dL): 13/13 events detected (sensitivity: 1.00)
+Hypoglycemia detection (<70.0 mg/dL): 9/13 events detected (sensitivity: 0.69)
+Hypoglycemia detection (<70.0 mg/dL): 18/18 events detected (sensitivity: 1.00)
+Hypoglycemia detection (<70.0 mg/dL): 12/18 events detected (sensitivity: 0.67)
+Hyperglycemia detection (>180.0 mg/dL): 42/42 events detected (sensitivity: 1.00)
+Hyperglycemia detection (>180.0 mg/dL): 37/42 events detected (sensitivity: 0.88)
+Hyperglycemia detection (>180.0 mg/dL): 15/15 events detected (sensitivity: 1.00)
+Hyperglycemia detection (>180.0 mg/dL): 10/15 events detected (sensitivity: 0.67)
+Hyperglycemia detection (>180.0 mg/dL): 18/18 events detected (sensitivity: 1.00)
+Hyperglycemia detection (>180.0 mg/dL): 17/18 events detected (sensitivity: 0.94)
+Hyperglycemia detection (>180.0 mg/dL): 21/21 events detected (sensitivity: 1.00)
+Hyperglycemia detection (>180.0 mg/dL): 21/21 events detected (sensitivity: 1.00)

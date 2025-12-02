@@ -1,0 +1,56 @@
+
+====================================================================================================
+EXTENDED PARAMETER SENSITIVITY TESTING FOR MADEX METRIC ANALYSIS
+====================================================================================================
+Analysis initiated at: 2025-12-02 09:08:27
+Analysis type: Extended parameter sensitivity testing for MADEX metric
+Clinical context: Glucose prediction model evaluation with 50-point scenarios
+
+ANALYSIS OBJECTIVES:
+1. Validate MADEX robustness across clinical parameter ranges with extended data
+2. Identify optimal parameter combinations for different clinical contexts
+3. Compare MADEX performance against traditional metrics (RMSE, MAE, MAPE)
+4. Analyze disagreement cases where MADEX differs from traditional metrics
+5. Demonstrate MADEX clinical superiority in glucose-context-aware evaluation
+6. Assess impact of larger sample size (50 points) on ranking stability
+
+================================================================================
+MADEX SENSITIVITY ANALYSIS INITIATED
+================================================================================
+Parameter ranges being tested:
+- Parameter 'a' (euglycemic center): [110, 125, 140] mg/dL
+- Parameter 'b' (critical range): [40, 55, 70, 80]
+- Parameter 'c' (slope modifier): [20, 30, 40, 50, 60, 80]
+Total parameter combinations to test: 72
+
+--------------------------------------------------
+ESTABLISHING BASELINE RANKINGS
+--------------------------------------------------
+
+================================================================================
+PARAMETER EFFECT ANALYSIS
+================================================================================
+
+================================================================================
+MADEX VS TRADITIONAL METRICS COMPARISON
+================================================================================
+Comparison Metrics: RMSE=11.17, MAE=10.50, MAPE=22.65%
+Comparison Metrics: RMSE=11.17, MAE=10.50, MAPE=22.65%
+Comparison Metrics: RMSE=17.51, MAE=16.44, MAPE=6.89%
+Comparison Metrics: RMSE=17.51, MAE=16.44, MAPE=6.89%
+Comparison Metrics: RMSE=9.78, MAE=9.28, MAPE=5.88%
+Comparison Metrics: RMSE=9.78, MAE=9.28, MAPE=5.88%
+Comparison Metrics: RMSE=7.50, MAE=7.36, MAPE=6.05%
+Comparison Metrics: RMSE=7.50, MAE=7.36, MAPE=6.05%
+Comparison Metrics: RMSE=11.47, MAE=10.92, MAPE=12.84%
+Comparison Metrics: RMSE=11.47, MAE=10.92, MAPE=12.84%
+Comparison Metrics: RMSE=6.94, MAE=6.87, MAPE=6.30%
+Comparison Metrics: RMSE=6.94, MAE=6.87, MAPE=6.30%
+Comparison Metrics: RMSE=16.56, MAE=15.91, MAPE=16.28%
+Comparison Metrics: RMSE=16.56, MAE=15.91, MAPE=16.28%
+Comparison Metrics: RMSE=23.06, MAE=20.18, MAPE=17.36%
+Comparison Metrics: RMSE=23.06, MAE=20.18, MAPE=17.36%
+
+================================================================================
+DISAGREEMENT ANALYSIS
+================================================================================

@@ -1,8 +1,9 @@
-from splib.diabetes.madex import mean_adjusted_exponent_error, graph_vs_mse
-from splib.diabetes.cega import clarke_error_grid
+from new_metric.madex import mean_adjusted_exponent_error, graph_vs_mse
+from new_metric.cega import clarke_error_grid
 import pandas as pd
 from sklearn.metrics import mean_squared_error
 import numpy as np
+import matplotlib.pyplot as plt
 
 
 if __name__ == "__main__":
@@ -18,8 +19,12 @@ if __name__ == "__main__":
     y_pred2 = [75, 75, 50, 110, 100, 100, 150, 210]
 
     # scenarios dataframe
-    df = pd.DataFrame(list(zip(y_true, y_pred1, y_pred2)), columns=[
-                      'Reference Values', 'Scenario 1 predictions', 'Scenario 2 predictions'])
+    data = {
+        'Reference Values': y_true,
+        'Scenario 1 predictions': y_pred1,
+        'Scenario 2 predictions': y_pred2
+    }
+    df = pd.DataFrame(data)
     print(df)
     df.to_excel('outcome/scenarios.xlsx')
 
